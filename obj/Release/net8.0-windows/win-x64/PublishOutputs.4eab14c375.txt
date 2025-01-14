@@ -1,0 +1,8 @@
+C:\Users\acost\Downloads\2030\InventarioExcel.pdb
+C:\Users\acost\Downloads\2030\D3DCompiler_47_cor3.dll
+C:\Users\acost\Downloads\2030\PenImc_cor3.dll
+C:\Users\acost\Downloads\2030\PresentationNative_cor3.dll
+C:\Users\acost\Downloads\2030\vcruntime140_cor3.dll
+C:\Users\acost\Downloads\2030\wpfgfx_cor3.dll
+C:\Users\acost\Downloads\2030\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\acost\Downloads\2030\InventarioExcel.exe

@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventarioExcel", "InventarioExcel.csproj", "{07CFC42C-6E20-4074-B375-6DCB576A8506}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Herramienta de posteo", "Herramienta de posteo", "{A4DCBFDC-4C5F-446C-AAF3-5F9ED81757CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07CFC42C-6E20-4074-B375-6DCB576A8506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07CFC42C-6E20-4074-B375-6DCB576A8506}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07CFC42C-6E20-4074-B375-6DCB576A8506}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07CFC42C-6E20-4074-B375-6DCB576A8506}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{07CFC42C-6E20-4074-B375-6DCB576A8506} = {A4DCBFDC-4C5F-446C-AAF3-5F9ED81757CD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A448B6D-D172-41EB-94B1-AD44DA589396}
+	EndGlobalSection
+EndGlobal

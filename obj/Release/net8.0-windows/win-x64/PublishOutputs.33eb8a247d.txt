@@ -1,0 +1,8 @@
+C:\Users\acost\Downloads\importar excel corregida\InventarioExcel.pdb
+C:\Users\acost\Downloads\importar excel corregida\D3DCompiler_47_cor3.dll
+C:\Users\acost\Downloads\importar excel corregida\PenImc_cor3.dll
+C:\Users\acost\Downloads\importar excel corregida\PresentationNative_cor3.dll
+C:\Users\acost\Downloads\importar excel corregida\vcruntime140_cor3.dll
+C:\Users\acost\Downloads\importar excel corregida\wpfgfx_cor3.dll
+C:\Users\acost\Downloads\importar excel corregida\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\acost\Downloads\importar excel corregida\InventarioExcel.exe
