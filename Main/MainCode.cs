@@ -12,20 +12,42 @@ using NPOI.SS.UserModel;
 using NPOI.HSSF.UserModel;
 using NPOI.XSSF.UserModel;
 using BorderStyle = System.Windows.Forms.BorderStyle;
+using IniParser;
+using IniParser.Model;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using ExcelDataReader;
 namespace InventarioExcel
 {
     public partial class MainCode : Form
     {
+        private readonly string processedFilesFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ProcessedFiles");
+        private readonly string processedFilesLogPath;
+        private string selectedFileNameWithoutExtension; // Archivo seleccionado actualmente (sin extensión)
         public MainCode()
         {
             InitializeComponent();
+
+            processedFilesLogPath = Path.Combine(processedFilesFolder, "processed_files.txt");
+
+            // Crear la carpeta si no existe
+            if (!Directory.Exists(processedFilesFolder))
+            {
+                Directory.CreateDirectory(processedFilesFolder);
+            }
+
+            // Crear el archivo si no existe
+            if (!File.Exists(processedFilesLogPath))
+            {
+                File.Create(processedFilesLogPath).Dispose();
+            }
         }
         // Configurar el StatusBar
 
 
-        
+
 
         // Métodos para abrir el archivo
+
         private async void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
@@ -37,119 +59,156 @@ namespace InventarioExcel
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = openFileDialog.FileName;
+                selectedFileNameWithoutExtension = Path.GetFileNameWithoutExtension(filePath); // Almacenar el nombre del archivo seleccionado
+                labelFileName.Text = selectedFileNameWithoutExtension; // Mostrar en el Label
 
-                // Validar extensión del archivo para asegurar que es soportado
+                // Validar extensión del archivo
                 string extension = Path.GetExtension(filePath).ToLower();
                 if (extension == ".xlsx" || extension == ".xls")
                 {
-                    await Task.Run(() => ShowExcelColumns(filePath)); // Cargar Excel en segundo plano
+                    await Task.Run(() => ShowExcelColumns(filePath)); // Procesar archivo en segundo plano
+                    RegistrarLog("Archivo cargado correctamente para procesar ");
                 }
                 else
                 {
                     MessageBox.Show("El archivo seleccionado no es un formato Excel válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
         }
-        // Método para cargar a la vista y limpiar caracteres no deseados
-        private void ShowExcelColumns(string filePath)
+private void ShowExcelColumns(string filePath)
+{
+    try
+    {
+        // Registrar las codificaciones necesarias (incluyendo Windows-1252)
+        System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+
+        using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
         {
-            try
+            IExcelDataReader excelReader;
+
+            // Leer según el tipo de archivo
+            if (Path.GetExtension(filePath).ToLower() == ".xls")
             {
-                using (var workbook = new XLWorkbook(filePath))
+                excelReader = ExcelReaderFactory.CreateBinaryReader(stream); // Para archivos .xls
+            }
+            else
+            {
+                excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream); // Para archivos .xlsx
+            }
+
+            // Cargar los datos a un DataSet
+            var result = excelReader.AsDataSet(new ExcelDataSetConfiguration
+            {
+                ConfigureDataTable = (_) => new ExcelDataTableConfiguration
                 {
-                    var worksheet = workbook.Worksheet(1); // Primera hoja del Excel
-                    DataTable dataTable = new DataTable();
-                    var firstRow = worksheet.Row(1); // Fila de encabezados
-
-                    // Lista de ComboBox
-                    var comboBoxes = new List<ComboBox>
-            {
-                comboBoxUPC, comboBox10, comboBoxAtrib, comboBoxTalla,
-                comboBox4, comboBoxCab, comboBox6, comboBoxDetalle_item, comboBoxPrecio, comboBoxCostoEstandar, comboBoxNivel2, comboBoxNivel3, comboBoxNivel4, comboBoxNivel5
-            };
-
-                    this.Invoke(new Action(() =>
-                    {
-                        // Limpiar los ComboBox
-                        foreach (var comboBox in comboBoxes)
-                        {
-                            comboBox.Items.Clear();
-                        }
-                    }));
-
-                    // Agregar columnas al DataTable y a los ComboBox
-                    foreach (var cell in firstRow.CellsUsed())
-                    {
-                        string columnName = CleanString(cell.GetValue<string>()); // Limpiar caracteres
-                        if (!string.IsNullOrEmpty(columnName))
-                        {
-                            dataTable.Columns.Add(columnName);
-
-                            this.Invoke(new Action(() =>
-                            {
-                                foreach (var comboBox in comboBoxes)
-                                {
-                                    comboBox.Items.Add(columnName);
-                                }
-                            }));
-                        }
-                    }
-
-                    // Cargar datos al DataTable
-                    foreach (var row in worksheet.RowsUsed().Skip(1)) // Saltar encabezado
-                    {
-                        DataRow dataRow = dataTable.NewRow();
-                        int columnIndex = 0;
-
-                        foreach (var cell in row.Cells(1, dataTable.Columns.Count))
-                        {
-                            string cellValue = CleanString(cell.GetValue<string>()); // Limpiar caracteres
-                            dataRow[columnIndex] = string.IsNullOrEmpty(cellValue) ? DBNull.Value : cellValue;
-                            columnIndex++;
-                        }
-                        dataTable.Rows.Add(dataRow);
-                    }
-
-                    this.Invoke(new Action(() =>
-                    {
-                        dataGridView.DataSource = dataTable;
-                    }));
+                    UseHeaderRow = true // Considerar la primera fila como encabezado
                 }
-            }
-            catch (Exception ex)
-            {
-                this.Invoke(new Action(() =>
-                {
-                    MessageBox.Show($"Error al procesar el archivo Excel: {ex.Message}", "Error");
-                }));
-                RegistrarLog($"Error al cargar el archivo Excel: {ex.Message}", true);
-            }
-        }
+            });
 
-        // Método para limpiar caracteres no deseados
+            excelReader.Close();
+
+            // Obtener la primera tabla (hoja)
+            DataTable dataTable = result.Tables[0];
+
+            this.Invoke(new Action(() =>
+            {
+                // Limpiar ComboBox y agregar opción vacía
+                var comboBoxes = new List<ComboBox>
+                {
+                    comboBoxUPC, comboBox10, comboBoxAtrib, comboBoxTalla,
+                    comboBox4, comboBoxCab, comboBox6, comboBoxDetalle_item,
+                    comboBoxPrecio, comboBoxCostoEstandar, comboBoxNivel2,
+                    comboBoxNivel3, comboBoxNivel4, comboBoxNivel5
+                };
+
+                foreach (var comboBox in comboBoxes)
+                {
+                    comboBox.Items.Clear(); // Limpiar ítems
+                    comboBox.Items.Add(""); // Agregar opción vacía para deseleccionar
+                }
+
+                // Agregar columnas del Excel a los ComboBox
+                foreach (DataColumn column in dataTable.Columns)
+                {
+                    string columnName = CleanString(column.ColumnName); // Limpiar nombre de columna
+                    foreach (var comboBox in comboBoxes)
+                    {
+                        comboBox.Items.Add(columnName); // Agregar nombres de columnas
+                    }
+                }
+
+                // Limpiar y asignar el DataTable al DataGridView después de limpieza
+                DataTable cleanedDataTable = dataTable.Copy();
+                foreach (DataRow row in cleanedDataTable.Rows)
+                {
+                    for (int i = 0; i < cleanedDataTable.Columns.Count; i++)
+                    {
+                        string value = row[i].ToString();
+
+                        // Verificar si el valor es válido para un Double
+                        if (cleanedDataTable.Columns[i].DataType == typeof(double))
+                        {
+                            // Si el valor es vacío o no se puede convertir, asignamos 0 o un valor predeterminado
+                            if (string.IsNullOrEmpty(value) || !double.TryParse(value, out double parsedValue))
+                            {
+                                row[i] = 0; // O también podrías asignar 'null' si la columna permite valores nulos
+                            }
+                            else
+                            {
+                                row[i] = parsedValue; // Asignar el valor numérico válido
+                            }
+                        }
+                        else
+                        {
+                            // Si no es un Double, asignamos el valor tal cual
+                            row[i] = CleanString(value); // Limpiar el valor si es necesario
+                        }
+                    }
+                }
+
+                dataGridView.DataSource = cleanedDataTable;
+            }));
+        }
+    }
+    catch (Exception ex)
+    {
+        this.Invoke(new Action(() =>
+        {
+            MessageBox.Show($"Error al procesar el archivo Excel: {ex.Message}", "Error");
+        }));
+        RegistrarLog($"Error al cargar el archivo Excel: {ex.Message}", true);
+    }
+}
+
         private string CleanString(string input)
         {
             if (string.IsNullOrEmpty(input))
                 return input;
 
-            // Normalizar el texto eliminando acentos y tildes
-            string normalizedString = input.Normalize(NormalizationForm.FormD);
-            char[] buffer = normalizedString
-                .Where(c => CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark) // Remover marcas diacríticas
-                .ToArray();
-            string cleanString = new string(buffer);
+            // Reemplazar "Ñ" por "N" y "ñ" por "n"
+            string cleanString = input.Replace("Ñ", "N").Replace("ñ", "n");
 
-            // Conservar caracteres específicos como ñ, Ñ, paréntesis y espacios
-            cleanString = Regex.Replace(cleanString, @"[^a-zA-Z0-9\sñÑ\(\)]", ""); // Remover caracteres no deseados excepto paréntesis, ñ, y espacios
+            // Normalizar el texto eliminando marcas diacríticas (excepto tildes explícitas)
+            string normalizedString = cleanString.Normalize(NormalizationForm.FormD);
+            char[] buffer = normalizedString
+                .Where(c => CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark ||
+                            "áéíóúÁÉÍÓÚ".Contains(c)) // Conservar tildes
+                .ToArray();
+            cleanString = new string(buffer);
+
+            // Permitir caracteres definidos en la expresión regular
+            cleanString = Regex.Replace(cleanString, @"[^a-zA-Z0-9\s.,/_\-@áéíóúÁÉÍÓÚñÑ]", "");
 
             // Retornar texto limpio y sin espacios innecesarios
             return cleanString.Trim();
         }
 
+
+
+
         private void btnSubirBD_Click(object sender, EventArgs e)
         {
-            string connectionString = "User=SYSDBA;Password=masterkey;Database=C:\\NemeSys\\Database\\NEMESYSDB.IB;DataSource=localhost;Port=3050;Dialect=3;Charset=UTF8;";
+
             string tipoInventario = rbArticulo.Checked ? "ARTICULO" : "SERVICIO";
             string cantidadDefault = "0";
             string localidad = "ALM1";
@@ -171,6 +230,34 @@ namespace InventarioExcel
             int cantMaxDefault = 100;
             int cantMinDefault = 0;
 
+            if (string.IsNullOrEmpty(selectedFileNameWithoutExtension))
+            {
+                MessageBox.Show("Por favor, selecciona un archivo primero.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                RegistrarLog("Por favor, selecciona un archivo primero. ");
+                return;
+            }
+
+            // Verificar si el archivo ya fue procesado
+            if (File.ReadLines(processedFilesLogPath).Contains(selectedFileNameWithoutExtension))
+            {
+                MessageBox.Show("Este archivo ya fue posteado anteriormente. No se permite postear duplicados. Por favor, vuelva a cargar otro archivo diferente para evitar posteos duplicados del mismo archivo. Si deseas postear el mismo archivo de todas formas, edita su nombre para que sea diferente, y así podrás postearlo nuevamente.\r\n\r\n", "Archivo duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                RegistrarLog("ERROR: Este archivo ya fue posteado anteriormente. No se permite postear duplicados. Por favor, vuelva a cargar otro archivo diferente para evitar posteos duplicados del mismo archivo.  ");
+                return;
+            }
+            // Ruta del archivo INI
+            string iniFilePath = @"C:\NemeSys\FDConnectionDefs.ini";
+
+            // Cargar el archivo INI
+            var parser = new FileIniDataParser();
+            IniData data = parser.ReadFile(iniFilePath);
+
+            // Leer los valores desde el archivo INI
+            string database = data["NemeSysDBFD"]["Database"];
+            string userName = data["NemeSysDBFD"]["User_Name"];
+            string password = data["NemeSysDBFD"]["Password"];
+
+            // Crear la cadena de conexión
+            string connectionString = $"User={userName};Password={password};Database={database};DataSource=localhost;Port=3050;Dialect=3;Charset=UTF8;";
             try
             {
                 using (FbConnection connection = new FbConnection(connectionString))
@@ -189,8 +276,8 @@ namespace InventarioExcel
                         if (!row.IsNewRow)
                         {
                             // Obtener valores de las columnas seleccionadas
-                           
-                         
+
+
                             string atrib = GetCellValue(row, comboBoxTalla.SelectedItem?.ToString());
                             string talla = GetCellValue(row, comboBox4.SelectedItem?.ToString());
                             string upc = GetCellValue(row, comboBox6.SelectedItem?.ToString());
@@ -346,6 +433,9 @@ namespace InventarioExcel
 
                     MessageBox.Show("Datos subidos exitosamente ", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     RegistrarLog("Se envio el posteo'.");
+                    // Registrar el archivo procesado
+                    File.AppendAllText(processedFilesLogPath, selectedFileNameWithoutExtension + Environment.NewLine);
+
 
                 }
             }
@@ -601,7 +691,20 @@ namespace InventarioExcel
 
         private void CargarCamposDesdeBaseDeDatos()
         {
-            string connectionString = "User=SYSDBA;Password=masterkey;Database=C:\\NemeSys\\Database\\NEMESYSDB.IB;DataSource=localhost;Port=3050;Dialect=3;Charset=UTF8;";
+            // Ruta del archivo INI
+            string iniFilePath = @"C:\NemeSys\FDConnectionDefs.ini";
+
+            // Cargar el archivo INI
+            var parser = new FileIniDataParser();
+            IniData data = parser.ReadFile(iniFilePath);
+
+            // Leer los valores desde el archivo INI
+            string database = data["NemeSysDBFD"]["Database"];
+            string userName = data["NemeSysDBFD"]["User_Name"];
+            string password = data["NemeSysDBFD"]["Password"];
+
+            // Crear la cadena de conexión
+            string connectionString = $"User={userName};Password={password};Database={database};DataSource=localhost;Port=3050;Dialect=3;Charset=UTF8;";
 
             try
             {
@@ -640,12 +743,7 @@ namespace InventarioExcel
                         dt.Rows.Add(column.ColumnName);
                     }
 
-                    // Asignar el DataTable como fuente de datos del DataGridView
-                    dataGridView2.DataSource = dt;
 
-                    // Configurar la visualización
-                    dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    dataGridView2.Columns["Columna"].HeaderText = "Campos de la Base de Datos";
                 }
             }
             catch (Exception ex)
@@ -654,67 +752,9 @@ namespace InventarioExcel
             }
         }
 
-        private void ConfigurarDataGridView()
-        {
-            // Estilo general del DataGridView
-            dataGridView2.BorderStyle = (BorderStyle)NPOI.SS.UserModel.BorderStyle.None;
-            dataGridView2.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridView2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridView2.BackgroundColor = Color.White;
-            dataGridView2.EnableHeadersVisualStyles = false;
-
-            // Estilo para las celdas
-            dataGridView2.DefaultCellStyle.BackColor = Color.White;
-            dataGridView2.DefaultCellStyle.ForeColor = Color.Black;
-            dataGridView2.DefaultCellStyle.SelectionBackColor = Color.LightBlue;  // Color de fondo cuando está seleccionado
-            dataGridView2.DefaultCellStyle.SelectionForeColor = Color.Black;     // Color de texto cuando está seleccionado
-            dataGridView2.DefaultCellStyle.Font = new Font("Segoe UI", 10);      // Fuente legible y moderna
-
-            // Estilo para el encabezado
-            dataGridView2.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
-            dataGridView2.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-            dataGridView2.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            dataGridView2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            // Quitar líneas horizontales y verticales
-            dataGridView2.RowHeadersVisible = false;
-            dataGridView2.AllowUserToResizeRows = false;
-            dataGridView2.GridColor = Color.LightGray;
-
-            // Ajustar el tamaño de las columnas para que se adapten al contenido
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            // Añadir padding a las celdas para que el contenido no se pegue a los bordes
-            dataGridView2.DefaultCellStyle.Padding = new Padding(5);
-
-            // Alternar colores de las filas (como se ve en la imagen)
-            dataGridView2.RowsDefaultCellStyle.BackColor = Color.White;
-            dataGridView2.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
-        }
 
 
 
-
-        private void ConfigurarComboBoxes()
-        {
-            // Lista de los ComboBoxes que deseas estilizar
-            ComboBox[] comboBoxes = { comboBoxUPC, comboBox10, comboBoxAtrib, comboBoxTalla, comboBox4, comboBoxCab, comboBox6, comboBoxDetalle_item, comboBoxPrecio, comboBoxCostoEstandar, comboBoxNivel2, comboBoxNivel3, comboBoxNivel4, comboBoxNivel5 };
-
-            foreach (var comboBox in comboBoxes)
-            {
-                comboBox.FlatStyle = FlatStyle.Flat;         // Estilo plano
-                comboBox.BackColor = Color.White;            // Fondo blanco
-                comboBox.ForeColor = Color.Black;            // Texto negro
-                comboBox.Font = new Font("Segoe UI", 10);    // Fuente moderna y clara
-                comboBox.DropDownStyle = ComboBoxStyle.DropDownList; // Solo selección (no editable)
-                comboBox.Height = 30;                        // Altura de los comboBoxes (ajustar según necesidad)
-                comboBox.Margin = new Padding(5);
-                // Espaciado interno
-
-                // Modificar bordes y color cuando el ComboBox esté seleccionado
-                // Color de borde
-            }
-        }
 
         private void RegistrarLog(string mensaje, bool esError = false)
         {
@@ -784,6 +824,8 @@ namespace InventarioExcel
             ActualizarComboBoxProveedores();
             CustomizeDataGridView();
             ConfigurarStatusBar();
+        
+            SetupComboBoxAndLabels();
             // Ocultar las pestañas visibles en la parte superior
             tabControl1.Appearance = TabAppearance.FlatButtons;
             tabControl1.ItemSize = new Size(0, 1); // Reduce el tamaño de las pestañas a 0
@@ -796,10 +838,10 @@ namespace InventarioExcel
             RegistrarLog("La aplicación se inició mostrando solo el contenido de la pestaña 1.");
 
             // Configuración del DataGridView
-            ConfigurarDataGridView();
+
 
             // Configuración de los ComboBox
-            ConfigurarComboBoxes();
+            
 
 
             string logFilePath = "logs.txt";
@@ -811,7 +853,20 @@ namespace InventarioExcel
                     richTextBoxLogs.AppendText(log + Environment.NewLine);
                 }
             }
-            string connectionString = "User=SYSDBA;Password=masterkey;Database=C:\\NemeSys\\Database\\NEMESYSDB.IB;DataSource=localhost;Port=3050;Dialect=3;Charset=UTF8;";
+            // Ruta del archivo INI
+            string iniFilePath = @"C:\NemeSys\FDConnectionDefs.ini";
+
+            // Cargar el archivo INI
+            var parser = new FileIniDataParser();
+            IniData data = parser.ReadFile(iniFilePath);
+
+            // Leer los valores desde el archivo INI
+            string database = data["NemeSysDBFD"]["Database"];
+            string userName = data["NemeSysDBFD"]["User_Name"];
+            string password = data["NemeSysDBFD"]["Password"];
+
+            // Crear la cadena de conexión
+            string connectionString = $"User={userName};Password={password};Database={database};DataSource=localhost;Port=3050;Dialect=3;Charset=UTF8;";
 
             try
             {
@@ -895,7 +950,21 @@ namespace InventarioExcel
 
         private void CargarProveedores()
         {
-            string connectionString = "User=SYSDBA;Password=masterkey;Database=C:\\NemeSys\\Database\\NEMESYSDB.IB;DataSource=localhost;Port=3050;Dialect=3;Charset=UTF8;";
+            // Crear la cadena de conexión
+            // Ruta del archivo INI
+            string iniFilePath = @"C:\NemeSys\FDConnectionDefs.ini";
+
+            // Cargar el archivo INI
+            var parser = new FileIniDataParser();
+            IniData data = parser.ReadFile(iniFilePath);
+
+            // Leer los valores desde el archivo INI
+            string database = data["NemeSysDBFD"]["Database"];
+            string userName = data["NemeSysDBFD"]["User_Name"];
+            string password = data["NemeSysDBFD"]["Password"];
+
+            // Crear la cadena de conexión
+            string connectionString = $"User={userName};Password={password};Database={database};DataSource=localhost;Port=3050;Dialect=3;Charset=UTF8;";
 
             try
             {
@@ -954,34 +1023,38 @@ namespace InventarioExcel
 
         private void CustomizeDataGridView()
         {
-            // Quitar bordes
+            // Configurar las cabeceras de las columnas
+            dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+            dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black; // Texto en negro
+            dataGridView.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(230, 255, 230) ; // Verde más pálido // Verde pastel claro al seleccionar
+            dataGridView.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
+            dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 8, FontStyle.Regular); // Fuente Tahoma, tamaño 6, sin negrita
+
+            // Otros estilos del DataGridView
+            dataGridView.EnableHeadersVisualStyles = false; // Desactiva el estilo predeterminado de las cabeceras
+            dataGridView.DefaultCellStyle.BackColor = Color.FromArgb(230, 255, 230); // Verde más pálido // Verde pastel claro para las celdas
+            dataGridView.DefaultCellStyle.SelectionBackColor = Color.Blue; // Fondo de celdas seleccionadas
+            dataGridView.DefaultCellStyle.ForeColor = Color.Black; // Texto en negro
+            dataGridView.DefaultCellStyle.Font = new Font("Tahoma", 7, FontStyle.Regular); // Fuente Tahoma, tamaño 6, sin negrita
+
+            // Alternar colores en filas
+            dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+
+            // Otros ajustes
             dataGridView.BorderStyle = BorderStyle.None;
-
-            // Cambiar el estilo de las celdas
-            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
-
-            // Modificar el fondo
+            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView.GridColor = Color.FromArgb(204, 255, 204);
             dataGridView.BackgroundColor = Color.White;
 
-            // Quitar el marco de la fila seleccionada
-            dataGridView.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
-            dataGridView.DefaultCellStyle.SelectionForeColor = Color.White;
-
-            // Estilizar las filas
-            dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
-
-            // Establecer color de las cabeceras
-            dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 122, 204);
-            dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-            // Establecer el tamaño de las celdas
+            // Tamaño de celdas y cabeceras
             dataGridView.RowTemplate.Height = 35;
             dataGridView.ColumnHeadersHeight = 40;
 
-            // Desactivar la edición y la selección
+            // Desactivar edición
             dataGridView.ReadOnly = true;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
+
 
 
 
@@ -993,7 +1066,20 @@ namespace InventarioExcel
 
         private void CargarLocalidades()
         {
-            string connectionString = "User=SYSDBA;Password=masterkey;Database=C:\\NemeSys\\Database\\NEMESYSDB.IB;DataSource=localhost;Port=3050;Dialect=3;Charset=UTF8;";
+            // Ruta del archivo INI
+            string iniFilePath = @"C:\NemeSys\FDConnectionDefs.ini";
+
+            // Cargar el archivo INI
+            var parser = new FileIniDataParser();
+            IniData data = parser.ReadFile(iniFilePath);
+
+            // Leer los valores desde el archivo INI
+            string database = data["NemeSysDBFD"]["Database"];
+            string userName = data["NemeSysDBFD"]["User_Name"];
+            string password = data["NemeSysDBFD"]["Password"];
+
+            // Crear la cadena de conexión
+            string connectionString = $"User={userName};Password={password};Database={database};DataSource=localhost;Port=3050;Dialect=3;Charset=UTF8;";
             try
             {
                 using (FbConnection connection = new FbConnection(connectionString))
@@ -1032,7 +1118,20 @@ namespace InventarioExcel
 
         private void ActualizarComboBoxDepartamentos()
         {
-            string connectionString = "User=SYSDBA;Password=masterkey;Database=C:\\NemeSys\\Database\\NEMESYSDB.IB;DataSource=localhost;Port=3050;Dialect=3;Charset=UTF8;";
+            // Ruta del archivo INI
+            string iniFilePath = @"C:\NemeSys\FDConnectionDefs.ini";
+
+            // Cargar el archivo INI
+            var parser = new FileIniDataParser();
+            IniData data = parser.ReadFile(iniFilePath);
+
+            // Leer los valores desde el archivo INI
+            string database = data["NemeSysDBFD"]["Database"];
+            string userName = data["NemeSysDBFD"]["User_Name"];
+            string password = data["NemeSysDBFD"]["Password"];
+
+            // Crear la cadena de conexión
+            string connectionString = $"User={userName};Password={password};Database={database};DataSource=localhost;Port=3050;Dialect=3;Charset=UTF8;";
 
             try
             {
@@ -1077,7 +1176,20 @@ namespace InventarioExcel
 
         private void ActualizarComboBoxProveedores()
         {
-            string connectionString = "User=SYSDBA;Password=masterkey;Database=C:\\NemeSys\\Database\\NEMESYSDB.IB;DataSource=localhost;Port=3050;Dialect=3;Charset=UTF8;";
+            // Ruta del archivo INI
+            string iniFilePath = @"C:\NemeSys\FDConnectionDefs.ini";
+
+            // Cargar el archivo INI
+            var parser = new FileIniDataParser();
+            IniData data = parser.ReadFile(iniFilePath);
+
+            // Leer los valores desde el archivo INI
+            string database = data["NemeSysDBFD"]["Database"];
+            string userName = data["NemeSysDBFD"]["User_Name"];
+            string password = data["NemeSysDBFD"]["Password"];
+
+            // Crear la cadena de conexión
+            string connectionString = $"User={userName};Password={password};Database={database};DataSource=localhost;Port=3050;Dialect=3;Charset=UTF8;";
 
             try
             {
@@ -1116,8 +1228,20 @@ namespace InventarioExcel
 
         private void CargarUnidadesMedida()
         {
-            string connectionString = "User=SYSDBA;Password=masterkey;Database=C:\\NemeSys\\Database\\NEMESYSDB.IB;DataSource=localhost;Port=3050;Dialect=3;Charset=UTF8;";
+            // Ruta del archivo INI
+            string iniFilePath = @"C:\NemeSys\FDConnectionDefs.ini";
 
+            // Cargar el archivo INI
+            var parser = new FileIniDataParser();
+            IniData data = parser.ReadFile(iniFilePath);
+
+            // Leer los valores desde el archivo INI
+            string database = data["NemeSysDBFD"]["Database"];
+            string userName = data["NemeSysDBFD"]["User_Name"];
+            string password = data["NemeSysDBFD"]["Password"];
+
+            // Crear la cadena de conexión
+            string connectionString = $"User={userName};Password={password};Database={database};DataSource=localhost;Port=3050;Dialect=3;Charset=UTF8;";
             try
             {
                 using (FbConnection connection = new FbConnection(connectionString))
@@ -1522,6 +1646,100 @@ namespace InventarioExcel
         {
 
         }
+
+        private void label19_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SetupComboBoxAndLabels()
+        {
+            // Configurar las relaciones entre ComboBoxes y Labels
+            var comboBoxLabelPairs = new Dictionary<ComboBox, Label>
+    {
+        { comboBox10, label3 },
+        { comboBoxUPC, label36 },
+        { comboBoxAtrib, label37 },
+        { comboBoxTalla, label38 },
+        { comboBox4, label39 },
+        { comboBox6, label40 },
+        { comboBoxCab, label41 },
+        { comboBoxDetalle_item, label42 },
+        { comboBoxPrecio, label43 },
+        { comboBoxCostoEstandar, label45 },
+        { comboBoxNivel2, label46 },
+        { comboBoxNivel3, label47 },
+        { comboBoxNivel4, label48 },
+        { comboBoxNivel5, label4 }
+    };
+
+            // Alternar colores: verde pálido claro y blanco
+            bool useGreen = true;
+
+            foreach (var pair in comboBoxLabelPairs)
+            {
+                var comboBox = pair.Key;
+                var label = pair.Value;
+
+                // Personalizar el Label y el ComboBox con colores alternados
+                var backColor = useGreen ? Color.FromArgb(230, 255, 230) : Color.White; // Verde más pálido
+                CustomizeComboBox(comboBox, backColor);
+                CustomizeLabel(label, backColor);
+
+                // Alternar colores para el siguiente par
+                useGreen = !useGreen;
+
+                // Agregar eventos al ComboBox para resaltar el Label
+                comboBox.Enter += (s, e) => HighlightLabel(label); // Resalta el Label al enfocar el ComboBox
+                comboBox.Leave += (s, e) => ResetLabel(label);     // Restaura el color del Label al salir del ComboBox
+            }
+        }
+
+        private void CustomizeComboBox(ComboBox comboBox, Color backColor)
+        {
+            // Configurar el ComboBox con color fijo
+            comboBox.BackColor = backColor;
+            comboBox.FlatStyle = FlatStyle.Flat; // Estilo plano para un mejor diseño
+            comboBox.ForeColor = Color.Black;    // Texto en negro
+            comboBox.Font = new Font("Tahoma", 10, FontStyle.Regular);
+            comboBox.Tag = backColor;            // Guardar el color original
+        }
+
+        private void CustomizeLabel(Label label, Color backColor)
+        {
+            // Configurar el Label con color fijo
+            label.BackColor = backColor;
+            label.BorderStyle = BorderStyle.None;
+            label.TextAlign = ContentAlignment.MiddleLeft;
+            label.Font = new Font("Tahoma", 10, FontStyle.Regular);
+            label.ForeColor = Color.Black;
+            label.Tag = backColor; // Guardar el color original
+        }
+
+        private void HighlightLabel(Label label)
+        {
+            // Cambiar el color del Label a azul claro pastel al enfocar el ComboBox
+            label.BackColor = Color.FromArgb(100, 149, 237); // Azul más oscuro
+        }
+
+        private void ResetLabel(Label label)
+        {
+            // Restaurar el color original del Label
+            if (label.Tag is Color originalColor)
+            {
+                label.BackColor = originalColor;
+            }
+        }
+
+
+
+
+
     }
 }
 

@@ -18,10 +18,14 @@
 
 	<ItemGroup>
 		<PackageReference Include="ClosedXML" Version="0.104.2" />
+		<PackageReference Include="ExcelDataReader" Version="3.7.0" />
+		<PackageReference Include="ExcelDataReader.DataSet" Version="3.7.0" />
 		<PackageReference Include="FirebirdSql.Data.FirebirdClient" Version="10.3.1" />
+		<PackageReference Include="ini-parser" Version="2.5.2" />
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
 		<PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1001" />
 		<PackageReference Include="NPOI" Version="2.7.2" />
+		<PackageReference Include="System.Data.Odbc" Version="9.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>

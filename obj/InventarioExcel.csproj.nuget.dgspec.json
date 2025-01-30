@@ -42,7 +42,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
         "SdkAnalysisLevel": "9.0.100"
       },
@@ -53,6 +53,14 @@
             "ClosedXML": {
               "target": "Package",
               "version": "[0.104.2, )"
+            },
+            "ExcelDataReader": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "ExcelDataReader.DataSet": {
+              "target": "Package",
+              "version": "[3.7.0, )"
             },
             "FirebirdSql.Data.FirebirdClient": {
               "target": "Package",
@@ -69,6 +77,14 @@
             "NPOI": {
               "target": "Package",
               "version": "[2.7.2, )"
+            },
+            "System.Data.Odbc": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "ini-parser": {
+              "target": "Package",
+              "version": "[2.5.2, )"
             }
           },
           "imports": [
@@ -90,7 +106,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

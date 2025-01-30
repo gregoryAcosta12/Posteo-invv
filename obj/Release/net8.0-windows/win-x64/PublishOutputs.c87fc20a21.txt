@@ -1,0 +1,8 @@
+C:\Users\acost\Downloads\Herramienta de posteo (Errores corrigidos y mejoras)\InventarioExcel.pdb
+C:\Users\acost\Downloads\Herramienta de posteo (Errores corrigidos y mejoras)\D3DCompiler_47_cor3.dll
+C:\Users\acost\Downloads\Herramienta de posteo (Errores corrigidos y mejoras)\PenImc_cor3.dll
+C:\Users\acost\Downloads\Herramienta de posteo (Errores corrigidos y mejoras)\PresentationNative_cor3.dll
+C:\Users\acost\Downloads\Herramienta de posteo (Errores corrigidos y mejoras)\vcruntime140_cor3.dll
+C:\Users\acost\Downloads\Herramienta de posteo (Errores corrigidos y mejoras)\wpfgfx_cor3.dll
+C:\Users\acost\Downloads\Herramienta de posteo (Errores corrigidos y mejoras)\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\acost\Downloads\Herramienta de posteo (Errores corrigidos y mejoras)\InventarioExcel.exe

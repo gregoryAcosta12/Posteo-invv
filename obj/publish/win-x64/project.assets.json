@@ -138,6 +138,35 @@
           }
         }
       },
+      "ExcelDataReader/3.7.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/ExcelDataReader.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/ExcelDataReader.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "ExcelDataReader.DataSet/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "ExcelDataReader": "3.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/ExcelDataReader.DataSet.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/ExcelDataReader.DataSet.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "ExcelNumberFormat/1.1.0": {
         "type": "package",
         "compile": {
@@ -171,6 +200,19 @@
         },
         "runtime": {
           "lib/net8.0/FirebirdSql.Data.FirebirdClient.dll": {}
+        }
+      },
+      "ini-parser/2.5.2": {
+        "type": "package",
+        "compile": {
+          "lib/net20/INIFileParser.dll": {
+            "related": ".dll.mdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net20/INIFileParser.dll": {
+            "related": ".dll.mdb;.xml"
+          }
         }
       },
       "MathNet.Numerics.Signed/5.0.0": {
@@ -439,7 +481,7 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.11": {
+      "Microsoft.NET.ILLink.Tasks/8.0.12": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
@@ -619,6 +661,32 @@
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Data.Odbc/9.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Data.Odbc.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Data.Odbc.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/net8.0/System.Data.Odbc.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/net8.0/System.Data.Odbc.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
         }
       },
       "System.Diagnostics.DiagnosticSource/6.0.1": {
@@ -1069,6 +1137,35 @@
           }
         }
       },
+      "ExcelDataReader/3.7.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/ExcelDataReader.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/ExcelDataReader.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "ExcelDataReader.DataSet/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "ExcelDataReader": "3.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/ExcelDataReader.DataSet.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/ExcelDataReader.DataSet.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "ExcelNumberFormat/1.1.0": {
         "type": "package",
         "compile": {
@@ -1102,6 +1199,19 @@
         },
         "runtime": {
           "lib/net8.0/FirebirdSql.Data.FirebirdClient.dll": {}
+        }
+      },
+      "ini-parser/2.5.2": {
+        "type": "package",
+        "compile": {
+          "lib/net20/INIFileParser.dll": {
+            "related": ".dll.mdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net20/INIFileParser.dll": {
+            "related": ".dll.mdb;.xml"
+          }
         }
       },
       "MathNet.Numerics.Signed/5.0.0": {
@@ -1343,7 +1453,7 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.11": {
+      "Microsoft.NET.ILLink.Tasks/8.0.12": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
@@ -1544,6 +1654,22 @@
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Data.Odbc/9.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Data.Odbc.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "runtimes/win/lib/net8.0/System.Data.Odbc.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
         }
       },
       "System.Diagnostics.DiagnosticSource/6.0.1": {
@@ -2010,6 +2136,50 @@
         "lib/netstandard2.1/Enums.NET.xml"
       ]
     },
+    "ExcelDataReader/3.7.0": {
+      "sha512": "AMv3oDETRHSRyXC17rBtKH45qIfFyo433LMeaMB3u4RNr/c9Luuc0Z+JMP6+3Cx9n4wXqFqcrEIVxrf/GgYnZg==",
+      "type": "package",
+      "path": "exceldatareader/3.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ExcelDataReader.png",
+        "README.md",
+        "exceldatareader.3.7.0.nupkg.sha512",
+        "exceldatareader.nuspec",
+        "lib/net462/ExcelDataReader.dll",
+        "lib/net462/ExcelDataReader.pdb",
+        "lib/net462/ExcelDataReader.xml",
+        "lib/netstandard2.0/ExcelDataReader.dll",
+        "lib/netstandard2.0/ExcelDataReader.pdb",
+        "lib/netstandard2.0/ExcelDataReader.xml",
+        "lib/netstandard2.1/ExcelDataReader.dll",
+        "lib/netstandard2.1/ExcelDataReader.pdb",
+        "lib/netstandard2.1/ExcelDataReader.xml"
+      ]
+    },
+    "ExcelDataReader.DataSet/3.7.0": {
+      "sha512": "zA2/CVzbMspkNg0qf0/Zp+eU6VxYP5PtiJSErLDP46d/Y7F6of/NCcSGeXjs97KDq7UiEf6XJe+89s/92n2GYg==",
+      "type": "package",
+      "path": "exceldatareader.dataset/3.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ExcelDataReader.png",
+        "README.md",
+        "exceldatareader.dataset.3.7.0.nupkg.sha512",
+        "exceldatareader.dataset.nuspec",
+        "lib/net462/ExcelDataReader.DataSet.dll",
+        "lib/net462/ExcelDataReader.DataSet.pdb",
+        "lib/net462/ExcelDataReader.DataSet.xml",
+        "lib/netstandard2.0/ExcelDataReader.DataSet.dll",
+        "lib/netstandard2.0/ExcelDataReader.DataSet.pdb",
+        "lib/netstandard2.0/ExcelDataReader.DataSet.xml",
+        "lib/netstandard2.1/ExcelDataReader.DataSet.dll",
+        "lib/netstandard2.1/ExcelDataReader.DataSet.pdb",
+        "lib/netstandard2.1/ExcelDataReader.DataSet.xml"
+      ]
+    },
     "ExcelNumberFormat/1.1.0": {
       "sha512": "R3BVHPs9O+RkExbZYTGT0+9HLbi8ZrNij1Yziyw6znd3J7P3uoIR07uwTLGOogtz1p6+0sna66eBoXu7tBiVQA==",
       "type": "package",
@@ -2081,6 +2251,20 @@
         "lib/netstandard2.0/FirebirdSql.Data.FirebirdClient.dll",
         "lib/netstandard2.1/FirebirdSql.Data.FirebirdClient.dll",
         "license.txt"
+      ]
+    },
+    "ini-parser/2.5.2": {
+      "sha512": "hp3gKmC/14+6eKLgv7Jd1Z7OV86lO+tNfOXr/stQbwmRhdQuXVSvrRAuAe7G5+lwhkov0XkqZ8/bn1PYWMx6eg==",
+      "type": "package",
+      "path": "ini-parser/2.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ini-parser.2.5.2.nupkg.sha512",
+        "ini-parser.nuspec",
+        "lib/net20/INIFileParser.dll",
+        "lib/net20/INIFileParser.dll.mdb",
+        "lib/net20/INIFileParser.xml"
       ]
     },
     "MathNet.Numerics.Signed/5.0.0": {
@@ -2499,10 +2683,10 @@
         "microsoft.io.recyclablememorystream.nuspec"
       ]
     },
-    "Microsoft.NET.ILLink.Tasks/8.0.11": {
-      "sha512": "zk5lnZrYJgtuJG8L4v17Ej8rZ3PUcR2iweNV08BaO5LbYHIi2wNaVNcJoLxvqgQdnjLlKnCCfVGLDr6QHeAarQ==",
+    "Microsoft.NET.ILLink.Tasks/8.0.12": {
+      "sha512": "FV4HnQ3JI15PHnJ5PGTbz+rYvrih42oLi/7UMIshNwCwUZhTq13UzrggtXk4ygrcMcN+4jsS6hhshx2p/Zd0ig==",
       "type": "package",
-      "path": "microsoft.net.illink.tasks/8.0.11",
+      "path": "microsoft.net.illink.tasks/8.0.12",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -2516,7 +2700,7 @@
         "build/Microsoft.NET.ILLink.Analyzers.props",
         "build/Microsoft.NET.ILLink.Tasks.props",
         "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.8.0.11.nupkg.sha512",
+        "microsoft.net.illink.tasks.8.0.12.nupkg.sha512",
         "microsoft.net.illink.tasks.nuspec",
         "tools/net472/ILLink.Tasks.dll",
         "tools/net472/ILLink.Tasks.dll.config",
@@ -2856,6 +3040,42 @@
         "lib/netstandard2.0/System.Configuration.ConfigurationManager.xml",
         "system.configuration.configurationmanager.8.0.0.nupkg.sha512",
         "system.configuration.configurationmanager.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Data.Odbc/9.0.1": {
+      "sha512": "J6pspjthfveu+Zg75tfRpsH3PggtpMiuirXtem2n7sJ2FDR+V0pQC6AZVJR5w7etnux2pqbwxGLVQjF/wdZdzQ==",
+      "type": "package",
+      "path": "system.data.odbc/9.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Data.Odbc.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Data.Odbc.targets",
+        "lib/net462/System.Data.Odbc.dll",
+        "lib/net462/System.Data.Odbc.xml",
+        "lib/net8.0/System.Data.Odbc.dll",
+        "lib/net8.0/System.Data.Odbc.xml",
+        "lib/net9.0/System.Data.Odbc.dll",
+        "lib/net9.0/System.Data.Odbc.xml",
+        "lib/netstandard2.0/System.Data.Odbc.dll",
+        "lib/netstandard2.0/System.Data.Odbc.xml",
+        "runtimes/unix/lib/net8.0/System.Data.Odbc.dll",
+        "runtimes/unix/lib/net8.0/System.Data.Odbc.xml",
+        "runtimes/unix/lib/net9.0/System.Data.Odbc.dll",
+        "runtimes/unix/lib/net9.0/System.Data.Odbc.xml",
+        "runtimes/win/lib/net8.0/System.Data.Odbc.dll",
+        "runtimes/win/lib/net8.0/System.Data.Odbc.xml",
+        "runtimes/win/lib/net9.0/System.Data.Odbc.dll",
+        "runtimes/win/lib/net9.0/System.Data.Odbc.xml",
+        "system.data.odbc.9.0.1.nupkg.sha512",
+        "system.data.odbc.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -3594,11 +3814,15 @@
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
       "ClosedXML >= 0.104.2",
+      "ExcelDataReader >= 3.7.0",
+      "ExcelDataReader.DataSet >= 3.7.0",
       "FirebirdSql.Data.FirebirdClient >= 10.3.1",
       "Microsoft.Data.SqlClient >= 5.2.2",
-      "Microsoft.NET.ILLink.Tasks >= 8.0.11",
+      "Microsoft.NET.ILLink.Tasks >= 8.0.12",
       "Microsoft.Office.Interop.Excel >= 15.0.4795.1001",
-      "NPOI >= 2.7.2"
+      "NPOI >= 2.7.2",
+      "System.Data.Odbc >= 9.0.1",
+      "ini-parser >= 2.5.2"
     ]
   },
   "packageFolders": {
@@ -3643,7 +3867,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
       "SdkAnalysisLevel": "9.0.100"
     },
@@ -3654,6 +3878,14 @@
           "ClosedXML": {
             "target": "Package",
             "version": "[0.104.2, )"
+          },
+          "ExcelDataReader": {
+            "target": "Package",
+            "version": "[3.7.0, )"
+          },
+          "ExcelDataReader.DataSet": {
+            "target": "Package",
+            "version": "[3.7.0, )"
           },
           "FirebirdSql.Data.FirebirdClient": {
             "target": "Package",
@@ -3666,7 +3898,7 @@
           "Microsoft.NET.ILLink.Tasks": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[8.0.11, )",
+            "version": "[8.0.12, )",
             "autoReferenced": true
           },
           "Microsoft.Office.Interop.Excel": {
@@ -3676,6 +3908,14 @@
           "NPOI": {
             "target": "Package",
             "version": "[2.7.2, )"
+          },
+          "System.Data.Odbc": {
+            "target": "Package",
+            "version": "[9.0.1, )"
+          },
+          "ini-parser": {
+            "target": "Package",
+            "version": "[2.5.2, )"
           }
         },
         "imports": [
@@ -3692,15 +3932,15 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[8.0.11, 8.0.11]"
+            "version": "[8.0.12, 8.0.12]"
           },
           {
             "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[8.0.11, 8.0.11]"
+            "version": "[8.0.12, 8.0.12]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[8.0.11, 8.0.11]"
+            "version": "[8.0.12, 8.0.12]"
           }
         ],
         "frameworkReferences": {
@@ -3711,7 +3951,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {
@@ -3722,33 +3962,13 @@
   },
   "logs": [
     {
-      "code": "NU1903",
+      "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "El paquete \"System.Private.Uri\" 4.3.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-5f2m-466j-3848",
-      "libraryId": "System.Private.Uri",
+      "message": "El paquete \"ini-parser 2.5.2\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net8.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "ini-parser",
       "targetGraphs": [
-        "net8.0-windows7.0/win-x64"
-      ]
-    },
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"System.Private.Uri\" 4.3.0 tiene una vulnerabilidad de gravedad moderada conocida, https://github.com/advisories/GHSA-x5qj-9vmx-7g6g",
-      "libraryId": "System.Private.Uri",
-      "targetGraphs": [
-        "net8.0-windows7.0/win-x64"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"System.Private.Uri\" 4.3.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-xhfc-gr8f-ffwc",
-      "libraryId": "System.Private.Uri",
-      "targetGraphs": [
-        "net8.0-windows7.0/win-x64"
+        "net8.0-windows7.0"
       ]
     }
   ]

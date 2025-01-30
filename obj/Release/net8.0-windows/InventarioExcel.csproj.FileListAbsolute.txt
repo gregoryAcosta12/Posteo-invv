@@ -138,3 +138,10 @@ C:\Users\acost\Downloads\JamenSoft\InventarioExcel\obj\Release\net8.0-windows\re
 C:\Users\acost\Downloads\JamenSoft\InventarioExcel\obj\Release\net8.0-windows\InventarioExcel.pdb
 C:\Users\acost\Downloads\JamenSoft\InventarioExcel\obj\Release\net8.0-windows\InventarioExcel.genruntimeconfig.cache
 C:\Users\acost\Downloads\JamenSoft\InventarioExcel\obj\Release\net8.0-windows\ref\InventarioExcel.dll
+C:\Users\acost\Downloads\JamenSoft\InventarioExcel\obj\Release\net8.0-windows\InventarioExcel.sourcelink.json
+C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\INIFileParser.dll
+C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\System.Data.Odbc.dll
+C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\runtimes\unix\lib\net8.0\System.Data.Odbc.dll
+C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\runtimes\win\lib\net8.0\System.Data.Odbc.dll
+C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\ExcelDataReader.dll
+C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\ExcelDataReader.DataSet.dll

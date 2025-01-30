@@ -52,50 +52,51 @@
             pictureBox1 = new PictureBox();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            label13 = new Label();
+            label6 = new Label();
+            labelFileName = new Label();
             label30 = new Label();
             label24 = new Label();
             button5 = new Button();
             label11 = new Label();
-            label6 = new Label();
             tabPage2 = new TabPage();
             label26 = new Label();
-            button7 = new Button();
-            button1 = new Button();
             label25 = new Label();
             label15 = new Label();
             panel4 = new Panel();
-            comboBoxNivel5 = new ComboBox();
-            comboBoxNivel4 = new ComboBox();
-            comboBoxNivel3 = new ComboBox();
-            comboBoxNivel2 = new ComboBox();
-            label23 = new Label();
-            label34 = new Label();
+            label19 = new Label();
             label1 = new Label();
-            label33 = new Label();
-            label32 = new Label();
-            comboBoxCostoEstandar = new ComboBox();
-            label29 = new Label();
-            comboBoxPrecio = new ComboBox();
-            label18 = new Label();
             panel1 = new Panel();
-            label21 = new Label();
-            label20 = new Label();
-            label17 = new Label();
-            label14 = new Label();
-            label13 = new Label();
-            label22 = new Label();
             label4 = new Label();
+            label48 = new Label();
+            label47 = new Label();
+            label46 = new Label();
+            label45 = new Label();
+            label43 = new Label();
+            label42 = new Label();
+            label41 = new Label();
+            label40 = new Label();
+            label39 = new Label();
+            label38 = new Label();
+            comboBoxNivel5 = new ComboBox();
+            label37 = new Label();
+            label36 = new Label();
             label3 = new Label();
-            comboBoxUPC = new ComboBox();
             comboBox10 = new ComboBox();
+            comboBoxNivel4 = new ComboBox();
+            comboBoxUPC = new ComboBox();
             comboBoxAtrib = new ComboBox();
             comboBoxTalla = new ComboBox();
-            comboBoxDetalle_item = new ComboBox();
             comboBox4 = new ComboBox();
+            comboBoxNivel3 = new ComboBox();
             comboBox6 = new ComboBox();
             comboBoxCab = new ComboBox();
-            label19 = new Label();
-            dataGridView2 = new DataGridView();
+            comboBoxDetalle_item = new ComboBox();
+            comboBoxNivel2 = new ComboBox();
+            comboBoxPrecio = new ComboBox();
+            comboBoxCostoEstandar = new ComboBox();
+            button7 = new Button();
+            button1 = new Button();
             tabPage3 = new TabPage();
             label28 = new Label();
             label27 = new Label();
@@ -118,7 +119,6 @@
             tabPage2.SuspendLayout();
             panel4.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             tabPage3.SuspendLayout();
             tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -129,9 +129,9 @@
             btnCargarExcel.BackColor = Color.White;
             btnCargarExcel.FlatStyle = FlatStyle.Popup;
             btnCargarExcel.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCargarExcel.Location = new Point(133, 69);
+            btnCargarExcel.Location = new Point(135, 43);
             btnCargarExcel.Name = "btnCargarExcel";
-            btnCargarExcel.Size = new Size(89, 29);
+            btnCargarExcel.Size = new Size(190, 29);
             btnCargarExcel.TabIndex = 0;
             btnCargarExcel.Text = "Seleccionar archivo Excel";
             btnCargarExcel.UseVisualStyleBackColor = false;
@@ -145,11 +145,11 @@
             dataGridView.BorderStyle = BorderStyle.Fixed3D;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridView.Location = new Point(17, 124);
+            dataGridView.Location = new Point(7, 134);
             dataGridView.Name = "dataGridView";
             dataGridView.ReadOnly = true;
             dataGridView.RowHeadersWidth = 51;
-            dataGridView.Size = new Size(366, 271);
+            dataGridView.Size = new Size(527, 274);
             dataGridView.TabIndex = 1;
             dataGridView.CellContentClick += dataGridView_CellContentClick;
             // 
@@ -158,7 +158,7 @@
             btnSubirBD.BackColor = Color.White;
             btnSubirBD.Font = new Font("Tahoma", 10.8F, FontStyle.Bold);
             btnSubirBD.Image = (Image)resources.GetObject("btnSubirBD.Image");
-            btnSubirBD.Location = new Point(191, 405);
+            btnSubirBD.Location = new Point(467, 408);
             btnSubirBD.Name = "btnSubirBD";
             btnSubirBD.Size = new Size(62, 51);
             btnSubirBD.TabIndex = 3;
@@ -198,7 +198,7 @@
             panel3.Controls.Add(rbArticulo);
             panel3.Controls.Add(rbServicio);
             panel3.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            panel3.Location = new Point(82, 309);
+            panel3.Location = new Point(146, 308);
             panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
             panel3.Size = new Size(206, 35);
@@ -224,17 +224,17 @@
             panel2.Location = new Point(6, 43);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(388, 360);
+            panel2.Size = new Size(523, 360);
             panel2.TabIndex = 21;
             // 
             // comboBoxImpuestoventas
             // 
             comboBoxImpuestoventas.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBoxImpuestoventas.FormattingEnabled = true;
-            comboBoxImpuestoventas.Location = new Point(224, 191);
+            comboBoxImpuestoventas.Location = new Point(273, 192);
             comboBoxImpuestoventas.Margin = new Padding(3, 2, 3, 2);
             comboBoxImpuestoventas.Name = "comboBoxImpuestoventas";
-            comboBoxImpuestoventas.Size = new Size(157, 25);
+            comboBoxImpuestoventas.Size = new Size(189, 25);
             comboBoxImpuestoventas.TabIndex = 27;
             comboBoxImpuestoventas.SelectedIndexChanged += comboBoxImpuestoventas_SelectedIndexChanged;
             // 
@@ -242,17 +242,17 @@
             // 
             comboBoxImpuestoCompra.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBoxImpuestoCompra.FormattingEnabled = true;
-            comboBoxImpuestoCompra.Location = new Point(224, 240);
+            comboBoxImpuestoCompra.Location = new Point(273, 237);
             comboBoxImpuestoCompra.Margin = new Padding(3, 2, 3, 2);
             comboBoxImpuestoCompra.Name = "comboBoxImpuestoCompra";
-            comboBoxImpuestoCompra.Size = new Size(157, 25);
+            comboBoxImpuestoCompra.Size = new Size(189, 25);
             comboBoxImpuestoCompra.TabIndex = 26;
             comboBoxImpuestoCompra.SelectedIndexChanged += comboBoxImpuestoCompra_SelectedIndexChanged;
             // 
             // label10
             // 
             label10.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(-2, 194);
+            label10.Location = new Point(60, 193);
             label10.Name = "label10";
             label10.Size = new Size(167, 24);
             label10.TabIndex = 25;
@@ -261,7 +261,7 @@
             // label9
             // 
             label9.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(-2, 243);
+            label9.Location = new Point(64, 240);
             label9.Name = "label9";
             label9.Size = new Size(146, 24);
             label9.TabIndex = 24;
@@ -271,10 +271,10 @@
             // 
             comboBoxLocalidad.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             comboBoxLocalidad.FormattingEnabled = true;
-            comboBoxLocalidad.Location = new Point(224, 101);
+            comboBoxLocalidad.Location = new Point(273, 101);
             comboBoxLocalidad.Margin = new Padding(3, 2, 3, 2);
             comboBoxLocalidad.Name = "comboBoxLocalidad";
-            comboBoxLocalidad.Size = new Size(157, 25);
+            comboBoxLocalidad.Size = new Size(189, 25);
             comboBoxLocalidad.TabIndex = 23;
             comboBoxLocalidad.SelectedIndexChanged += comboBoxLocalidad_SelectedIndexChanged;
             // 
@@ -282,17 +282,17 @@
             // 
             comboBoxUnidad.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBoxUnidad.FormattingEnabled = true;
-            comboBoxUnidad.Location = new Point(224, 149);
+            comboBoxUnidad.Location = new Point(273, 146);
             comboBoxUnidad.Margin = new Padding(3, 2, 3, 2);
             comboBoxUnidad.Name = "comboBoxUnidad";
-            comboBoxUnidad.Size = new Size(157, 25);
+            comboBoxUnidad.Size = new Size(189, 25);
             comboBoxUnidad.TabIndex = 22;
             comboBoxUnidad.SelectedIndexChanged += comboBoxUnidad_SelectedIndexChanged;
             // 
             // label8
             // 
             label8.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(-2, 104);
+            label8.Location = new Point(60, 104);
             label8.Name = "label8";
             label8.Size = new Size(88, 24);
             label8.TabIndex = 21;
@@ -302,7 +302,7 @@
             // label7
             // 
             label7.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(-2, 152);
+            label7.Location = new Point(60, 149);
             label7.Name = "label7";
             label7.Size = new Size(91, 24);
             label7.TabIndex = 20;
@@ -311,7 +311,7 @@
             // TextDepartamento
             // 
             TextDepartamento.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TextDepartamento.Location = new Point(-2, 18);
+            TextDepartamento.Location = new Point(60, 18);
             TextDepartamento.Name = "TextDepartamento";
             TextDepartamento.Size = new Size(103, 24);
             TextDepartamento.TabIndex = 15;
@@ -321,10 +321,10 @@
             // 
             comboBoxDepartamento.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBoxDepartamento.FormattingEnabled = true;
-            comboBoxDepartamento.Location = new Point(224, 18);
+            comboBoxDepartamento.Location = new Point(273, 18);
             comboBoxDepartamento.Margin = new Padding(3, 2, 3, 2);
             comboBoxDepartamento.Name = "comboBoxDepartamento";
-            comboBoxDepartamento.Size = new Size(157, 25);
+            comboBoxDepartamento.Size = new Size(189, 25);
             comboBoxDepartamento.TabIndex = 16;
             comboBoxDepartamento.SelectedIndexChanged += comboBoxDepartamento_SelectedIndexChanged;
             // 
@@ -332,17 +332,17 @@
             // 
             comboBoxProveedor.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBoxProveedor.FormattingEnabled = true;
-            comboBoxProveedor.Location = new Point(224, 56);
+            comboBoxProveedor.Location = new Point(273, 58);
             comboBoxProveedor.Margin = new Padding(3, 2, 3, 2);
             comboBoxProveedor.Name = "comboBoxProveedor";
-            comboBoxProveedor.Size = new Size(157, 25);
+            comboBoxProveedor.Size = new Size(189, 25);
             comboBoxProveedor.TabIndex = 18;
             comboBoxProveedor.SelectedIndexChanged += comboBoxProveedor_SelectedIndexChanged;
             // 
             // label5
             // 
             label5.Font = new Font("Tahoma", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(-2, 59);
+            label5.Location = new Point(60, 59);
             label5.Name = "label5";
             label5.Size = new Size(103, 24);
             label5.TabIndex = 19;
@@ -362,7 +362,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.excel_removebg_preview;
-            pictureBox1.Location = new Point(228, 69);
+            pictureBox1.Location = new Point(331, 43);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(29, 29);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -376,22 +376,24 @@
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
             tabControl1.Font = new Font("Tahoma", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tabControl1.Location = new Point(23, 93);
+            tabControl1.Location = new Point(12, 82);
             tabControl1.Margin = new Padding(3, 2, 3, 2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(412, 496);
+            tabControl1.Size = new Size(552, 496);
             tabControl1.TabIndex = 16;
             // 
             // tabPage1
             // 
             tabPage1.BackColor = Color.Gainsboro;
             tabPage1.BorderStyle = BorderStyle.Fixed3D;
+            tabPage1.Controls.Add(label13);
+            tabPage1.Controls.Add(label6);
+            tabPage1.Controls.Add(labelFileName);
             tabPage1.Controls.Add(label30);
             tabPage1.Controls.Add(label24);
             tabPage1.Controls.Add(button5);
             tabPage1.Controls.Add(label11);
-            tabPage1.Controls.Add(label6);
             tabPage1.Controls.Add(pictureBox1);
             tabPage1.Controls.Add(btnCargarExcel);
             tabPage1.Controls.Add(dataGridView);
@@ -400,18 +402,48 @@
             tabPage1.Margin = new Padding(3, 2, 3, 2);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3, 2, 3, 2);
-            tabPage1.Size = new Size(404, 466);
+            tabPage1.Size = new Size(544, 466);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Cargar el excel";
             tabPage1.Click += tabPage1_Click;
+            // 
+            // label13
+            // 
+            label13.BackColor = Color.Transparent;
+            label13.Font = new Font("Tahoma", 7F);
+            label13.ForeColor = Color.Black;
+            label13.Location = new Point(80, 75);
+            label13.Name = "label13";
+            label13.Size = new Size(379, 28);
+            label13.TabIndex = 27;
+            label13.Text = "Carga un archivo Excel (.xlsx o .xls) haciendo clic en 'Seleccionar archivo Excel' y verifica los datos en la tabla de vista previa. ";
+            // 
+            // label6
+            // 
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(55, 112);
+            label6.Name = "label6";
+            label6.Size = new Size(53, 19);
+            label6.TabIndex = 26;
+            label6.Text = "Archivo:";
+            // 
+            // labelFileName
+            // 
+            labelFileName.Font = new Font("Tahoma", 7.8F);
+            labelFileName.Location = new Point(144, 112);
+            labelFileName.Name = "labelFileName";
+            labelFileName.Size = new Size(215, 19);
+            labelFileName.TabIndex = 25;
             // 
             // label30
             // 
             label30.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label30.ForeColor = Color.Black;
-            label30.Location = new Point(160, 451);
+            label30.Location = new Point(470, 464);
             label30.Name = "label30";
-            label30.Size = new Size(72, 26);
+            label30.Size = new Size(62, 26);
             label30.TabIndex = 24;
             label30.Text = "Siguiente";
             label30.Click += label30_Click_1;
@@ -428,9 +460,9 @@
             // 
             // button5
             // 
-            button5.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button5.Font = new Font("Tahoma", 8F, FontStyle.Bold);
             button5.Image = Properties.Resources.Right_64px;
-            button5.Location = new Point(160, 400);
+            button5.Location = new Point(467, 413);
             button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
             button5.Size = new Size(62, 49);
@@ -442,40 +474,30 @@
             // label11
             // 
             label11.BackColor = Color.Transparent;
-            label11.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Font = new Font("Tahoma", 7F);
             label11.ForeColor = Color.Black;
-            label11.Location = new Point(61, 22);
+            label11.Location = new Point(3, 2);
             label11.Name = "label11";
-            label11.Size = new Size(286, 28);
+            label11.Size = new Size(539, 28);
             label11.TabIndex = 11;
-            label11.Text = "Carga un archivo Excel (.xlsx o .xls) haciendo clic en 'Subir Excel' y verifica los datos en la tabla de vista previa.\r\n";
+            label11.Text = resources.GetString("label11.Text");
             label11.Click += label11_Click;
-            // 
-            // label6
-            // 
-            label6.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Black;
-            label6.Location = new Point(113, 101);
-            label6.Name = "label6";
-            label6.Size = new Size(157, 20);
-            label6.TabIndex = 10;
-            label6.Text = "Formato soportado: .xlsx, .xls";
             // 
             // tabPage2
             // 
             tabPage2.BackColor = Color.Gainsboro;
             tabPage2.BorderStyle = BorderStyle.Fixed3D;
             tabPage2.Controls.Add(label26);
-            tabPage2.Controls.Add(button7);
-            tabPage2.Controls.Add(button1);
             tabPage2.Controls.Add(label25);
             tabPage2.Controls.Add(label15);
             tabPage2.Controls.Add(panel4);
+            tabPage2.Controls.Add(button7);
+            tabPage2.Controls.Add(button1);
             tabPage2.Location = new Point(4, 26);
             tabPage2.Margin = new Padding(3, 2, 3, 2);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3, 2, 3, 2);
-            tabPage2.Size = new Size(404, 455);
+            tabPage2.Size = new Size(544, 466);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Columnas a insertar";
             tabPage2.Click += tabPage2_Click;
@@ -484,18 +506,422 @@
             // 
             label26.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label26.ForeColor = Color.Black;
-            label26.Location = new Point(129, 461);
+            label26.Location = new Point(405, 467);
             label26.Name = "label26";
-            label26.Size = new Size(42, 26);
+            label26.Size = new Size(42, 22);
             label26.TabIndex = 26;
             label26.Text = "Atrás";
             label26.Click += label26_Click;
+            // 
+            // label25
+            // 
+            label25.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label25.ForeColor = Color.Black;
+            label25.Location = new Point(462, 467);
+            label25.Name = "label25";
+            label25.Size = new Size(58, 21);
+            label25.TabIndex = 23;
+            label25.Text = "Siguiente";
+            label25.Click += label25_Click;
+            // 
+            // label15
+            // 
+            label15.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label15.ForeColor = Color.Black;
+            label15.Location = new Point(12, 2);
+            label15.Name = "label15";
+            label15.Size = new Size(490, 29);
+            label15.TabIndex = 16;
+            label15.Text = "Selecciona las columnas del Excel que deseas enviar a la base de datos. Marca las que contienen la información que quieres importar y luego confirma";
+            label15.Click += label15_Click;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.White;
+            panel4.BorderStyle = BorderStyle.Fixed3D;
+            panel4.Controls.Add(label19);
+            panel4.Controls.Add(label1);
+            panel4.Controls.Add(panel1);
+            panel4.Location = new Point(1, 46);
+            panel4.Margin = new Padding(3, 2, 3, 2);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(531, 367);
+            panel4.TabIndex = 18;
+            panel4.Paint += panel4_Paint;
+            // 
+            // label19
+            // 
+            label19.BackColor = Color.Gainsboro;
+            label19.Font = new Font("Tahoma", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label19.ForeColor = Color.Black;
+            label19.Location = new Point(251, -2);
+            label19.Name = "label19";
+            label19.Size = new Size(278, 42);
+            label19.TabIndex = 40;
+            label19.Text = "                          \r\n     Campos del excel\r\n ";
+            // 
+            // label1
+            // 
+            label1.BackColor = Color.Gainsboro;
+            label1.Font = new Font("Tahoma", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(-2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(254, 40);
+            label1.TabIndex = 21;
+            label1.Text = "                           \r\n   Campos\r\n";
+            label1.Click += label1_Click_1;
+            // 
+            // panel1
+            // 
+            panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label48);
+            panel1.Controls.Add(label47);
+            panel1.Controls.Add(label46);
+            panel1.Controls.Add(label45);
+            panel1.Controls.Add(label43);
+            panel1.Controls.Add(label42);
+            panel1.Controls.Add(label41);
+            panel1.Controls.Add(label40);
+            panel1.Controls.Add(label39);
+            panel1.Controls.Add(label38);
+            panel1.Controls.Add(comboBoxNivel5);
+            panel1.Controls.Add(label37);
+            panel1.Controls.Add(label36);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(comboBox10);
+            panel1.Controls.Add(comboBoxNivel4);
+            panel1.Controls.Add(comboBoxUPC);
+            panel1.Controls.Add(comboBoxAtrib);
+            panel1.Controls.Add(comboBoxTalla);
+            panel1.Controls.Add(comboBox4);
+            panel1.Controls.Add(comboBoxNivel3);
+            panel1.Controls.Add(comboBox6);
+            panel1.Controls.Add(comboBoxCab);
+            panel1.Controls.Add(comboBoxDetalle_item);
+            panel1.Controls.Add(comboBoxNivel2);
+            panel1.Controls.Add(comboBoxPrecio);
+            panel1.Controls.Add(comboBoxCostoEstandar);
+            panel1.Location = new Point(0, 38);
+            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(529, 328);
+            panel1.TabIndex = 39;
+            // 
+            // label4
+            // 
+            label4.BackColor = Color.White;
+            label4.BorderStyle = BorderStyle.FixedSingle;
+            label4.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(-2, 298);
+            label4.Name = "label4";
+            label4.Size = new Size(267, 25);
+            label4.TabIndex = 64;
+            label4.Text = "   Nivel 5";
+            // 
+            // label48
+            // 
+            label48.BackColor = Color.White;
+            label48.BorderStyle = BorderStyle.FixedSingle;
+            label48.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label48.ForeColor = Color.Black;
+            label48.Location = new Point(-2, 274);
+            label48.Name = "label48";
+            label48.Size = new Size(267, 24);
+            label48.TabIndex = 63;
+            label48.Text = "   Nivel 4\r\n";
+            // 
+            // label47
+            // 
+            label47.BackColor = Color.White;
+            label47.BorderStyle = BorderStyle.FixedSingle;
+            label47.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label47.ForeColor = Color.Black;
+            label47.Location = new Point(-2, 253);
+            label47.Name = "label47";
+            label47.Size = new Size(267, 23);
+            label47.TabIndex = 62;
+            label47.Text = "   Nivel 3\r\n";
+            // 
+            // label46
+            // 
+            label46.BackColor = Color.White;
+            label46.BorderStyle = BorderStyle.FixedSingle;
+            label46.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label46.ForeColor = Color.Black;
+            label46.Location = new Point(-2, 230);
+            label46.Name = "label46";
+            label46.Size = new Size(267, 23);
+            label46.TabIndex = 61;
+            label46.Text = "   Nivel 2\r\n";
+            // 
+            // label45
+            // 
+            label45.BackColor = Color.White;
+            label45.BorderStyle = BorderStyle.FixedSingle;
+            label45.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label45.ForeColor = Color.Black;
+            label45.Location = new Point(-2, 207);
+            label45.Name = "label45";
+            label45.Size = new Size(267, 23);
+            label45.TabIndex = 47;
+            label45.Text = "  Costo Est.$";
+            // 
+            // label43
+            // 
+            label43.BackColor = Color.White;
+            label43.BorderStyle = BorderStyle.FixedSingle;
+            label43.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label43.ForeColor = Color.Black;
+            label43.Location = new Point(-2, 184);
+            label43.Name = "label43";
+            label43.Size = new Size(267, 23);
+            label43.TabIndex = 45;
+            label43.Text = "   Precio estandar";
+            label43.UseWaitCursor = true;
+            // 
+            // label42
+            // 
+            label42.BackColor = Color.White;
+            label42.BorderStyle = BorderStyle.FixedSingle;
+            label42.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label42.ForeColor = Color.Black;
+            label42.Location = new Point(-1, 161);
+            label42.Name = "label42";
+            label42.Size = new Size(266, 23);
+            label42.TabIndex = 44;
+            label42.Text = "   Descripcion extensa";
+            // 
+            // label41
+            // 
+            label41.BackColor = Color.White;
+            label41.BorderStyle = BorderStyle.FixedSingle;
+            label41.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label41.ForeColor = Color.Black;
+            label41.Location = new Point(-1, 138);
+            label41.Name = "label41";
+            label41.Size = new Size(266, 23);
+            label41.TabIndex = 43;
+            label41.Text = "   Cod. Cab";
+            // 
+            // label40
+            // 
+            label40.BackColor = Color.White;
+            label40.BorderStyle = BorderStyle.FixedSingle;
+            label40.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label40.ForeColor = Color.Black;
+            label40.Location = new Point(-1, 115);
+            label40.Name = "label40";
+            label40.Size = new Size(266, 27);
+            label40.TabIndex = 42;
+            label40.Text = "   Cod. Barra (UPC) ";
+            // 
+            // label39
+            // 
+            label39.BackColor = Color.White;
+            label39.BorderStyle = BorderStyle.FixedSingle;
+            label39.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label39.ForeColor = Color.Black;
+            label39.Location = new Point(-2, 94);
+            label39.Name = "label39";
+            label39.Size = new Size(267, 21);
+            label39.TabIndex = 41;
+            label39.Text = "   Talla*";
+            // 
+            // label38
+            // 
+            label38.BackColor = Color.White;
+            label38.BorderStyle = BorderStyle.FixedSingle;
+            label38.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label38.ForeColor = Color.Black;
+            label38.Location = new Point(-2, 69);
+            label38.Name = "label38";
+            label38.Size = new Size(267, 27);
+            label38.TabIndex = 40;
+            label38.Text = "   Color/Atrip";
+            // 
+            // comboBoxNivel5
+            // 
+            comboBoxNivel5.FormattingEnabled = true;
+            comboBoxNivel5.Location = new Point(263, 301);
+            comboBoxNivel5.Margin = new Padding(3, 2, 3, 2);
+            comboBoxNivel5.Name = "comboBoxNivel5";
+            comboBoxNivel5.Size = new Size(261, 25);
+            comboBoxNivel5.TabIndex = 60;
+            // 
+            // label37
+            // 
+            label37.BackColor = Color.White;
+            label37.BorderStyle = BorderStyle.FixedSingle;
+            label37.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label37.ForeColor = Color.Black;
+            label37.Location = new Point(-1, 46);
+            label37.Name = "label37";
+            label37.Size = new Size(266, 25);
+            label37.TabIndex = 39;
+            label37.Text = "   Nombre corto*\r\n";
+            // 
+            // label36
+            // 
+            label36.BackColor = Color.White;
+            label36.BorderStyle = BorderStyle.FixedSingle;
+            label36.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label36.ForeColor = Color.Black;
+            label36.Location = new Point(-2, 21);
+            label36.Name = "label36";
+            label36.Size = new Size(267, 25);
+            label36.TabIndex = 38;
+            label36.Text = "   Departamento*";
+            // 
+            // label3
+            // 
+            label3.BackColor = Color.White;
+            label3.BorderStyle = BorderStyle.FixedSingle;
+            label3.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(-1, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(266, 21);
+            label3.TabIndex = 22;
+            label3.Text = "   Proveedor*";
+            label3.Click += label3_Click_1;
+            // 
+            // comboBox10
+            // 
+            comboBox10.BackColor = Color.White;
+            comboBox10.FormattingEnabled = true;
+            comboBox10.Location = new Point(263, -2);
+            comboBox10.Margin = new Padding(3, 0, 3, 0);
+            comboBox10.Name = "comboBox10";
+            comboBox10.Size = new Size(260, 25);
+            comboBox10.TabIndex = 37;
+            comboBox10.SelectedIndexChanged += comboBox10_SelectedIndexChanged;
+            // 
+            // comboBoxNivel4
+            // 
+            comboBoxNivel4.FormattingEnabled = true;
+            comboBoxNivel4.Location = new Point(263, 276);
+            comboBoxNivel4.Margin = new Padding(3, 2, 3, 2);
+            comboBoxNivel4.Name = "comboBoxNivel4";
+            comboBoxNivel4.Size = new Size(261, 25);
+            comboBoxNivel4.TabIndex = 59;
+            // 
+            // comboBoxUPC
+            // 
+            comboBoxUPC.BackColor = Color.White;
+            comboBoxUPC.FormattingEnabled = true;
+            comboBoxUPC.Location = new Point(263, 21);
+            comboBoxUPC.Margin = new Padding(3, 0, 3, 0);
+            comboBoxUPC.Name = "comboBoxUPC";
+            comboBoxUPC.Size = new Size(260, 25);
+            comboBoxUPC.TabIndex = 0;
+            comboBoxUPC.SelectedIndexChanged += comboBoxUPC_SelectedIndexChanged;
+            // 
+            // comboBoxAtrib
+            // 
+            comboBoxAtrib.FormattingEnabled = true;
+            comboBoxAtrib.Location = new Point(263, 46);
+            comboBoxAtrib.Margin = new Padding(3, 0, 3, 0);
+            comboBoxAtrib.Name = "comboBoxAtrib";
+            comboBoxAtrib.Size = new Size(260, 25);
+            comboBoxAtrib.TabIndex = 20;
+            comboBoxAtrib.SelectedIndexChanged += comboBoxAtrib_SelectedIndexChanged;
+            // 
+            // comboBoxTalla
+            // 
+            comboBoxTalla.FormattingEnabled = true;
+            comboBoxTalla.Location = new Point(263, 71);
+            comboBoxTalla.Margin = new Padding(3, 0, 3, 0);
+            comboBoxTalla.Name = "comboBoxTalla";
+            comboBoxTalla.Size = new Size(260, 25);
+            comboBoxTalla.TabIndex = 23;
+            comboBoxTalla.SelectedIndexChanged += comboBoxTalla_SelectedIndexChanged;
+            // 
+            // comboBox4
+            // 
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(263, 94);
+            comboBox4.Margin = new Padding(3, 0, 3, 0);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(260, 25);
+            comboBox4.TabIndex = 25;
+            comboBox4.SelectedIndexChanged += comboBox4_SelectedIndexChanged;
+            // 
+            // comboBoxNivel3
+            // 
+            comboBoxNivel3.FormattingEnabled = true;
+            comboBoxNivel3.Location = new Point(263, 255);
+            comboBoxNivel3.Margin = new Padding(3, 2, 3, 2);
+            comboBoxNivel3.Name = "comboBoxNivel3";
+            comboBoxNivel3.Size = new Size(261, 25);
+            comboBoxNivel3.TabIndex = 58;
+            // 
+            // comboBox6
+            // 
+            comboBox6.FormattingEnabled = true;
+            comboBox6.Location = new Point(263, 117);
+            comboBox6.Margin = new Padding(3, 0, 3, 0);
+            comboBox6.Name = "comboBox6";
+            comboBox6.Size = new Size(260, 25);
+            comboBox6.TabIndex = 32;
+            comboBox6.SelectedIndexChanged += comboBox6_SelectedIndexChanged;
+            // 
+            // comboBoxCab
+            // 
+            comboBoxCab.FormattingEnabled = true;
+            comboBoxCab.Location = new Point(263, 136);
+            comboBoxCab.Margin = new Padding(3, 0, 3, 0);
+            comboBoxCab.Name = "comboBoxCab";
+            comboBoxCab.Size = new Size(260, 25);
+            comboBoxCab.TabIndex = 27;
+            comboBoxCab.SelectedIndexChanged += comboBox5_SelectedIndexChanged;
+            // 
+            // comboBoxDetalle_item
+            // 
+            comboBoxDetalle_item.FormattingEnabled = true;
+            comboBoxDetalle_item.Location = new Point(263, 161);
+            comboBoxDetalle_item.Margin = new Padding(3, 0, 3, 0);
+            comboBoxDetalle_item.Name = "comboBoxDetalle_item";
+            comboBoxDetalle_item.Size = new Size(260, 25);
+            comboBoxDetalle_item.TabIndex = 42;
+            comboBoxDetalle_item.SelectedIndexChanged += comboBoxDetalle_item_SelectedIndexChanged;
+            // 
+            // comboBoxNivel2
+            // 
+            comboBoxNivel2.FormattingEnabled = true;
+            comboBoxNivel2.Location = new Point(263, 232);
+            comboBoxNivel2.Margin = new Padding(3, 2, 3, 2);
+            comboBoxNivel2.Name = "comboBoxNivel2";
+            comboBoxNivel2.Size = new Size(261, 25);
+            comboBoxNivel2.TabIndex = 57;
+            // 
+            // comboBoxPrecio
+            // 
+            comboBoxPrecio.FormattingEnabled = true;
+            comboBoxPrecio.Location = new Point(263, 184);
+            comboBoxPrecio.Margin = new Padding(3, 0, 3, 0);
+            comboBoxPrecio.Name = "comboBoxPrecio";
+            comboBoxPrecio.Size = new Size(261, 25);
+            comboBoxPrecio.TabIndex = 46;
+            comboBoxPrecio.SelectedIndexChanged += comboBoxPrecio_SelectedIndexChanged;
+            // 
+            // comboBoxCostoEstandar
+            // 
+            comboBoxCostoEstandar.FormattingEnabled = true;
+            comboBoxCostoEstandar.Location = new Point(263, 207);
+            comboBoxCostoEstandar.Margin = new Padding(3, 0, 3, 0);
+            comboBoxCostoEstandar.Name = "comboBoxCostoEstandar";
+            comboBoxCostoEstandar.Size = new Size(261, 25);
+            comboBoxCostoEstandar.TabIndex = 50;
+            comboBoxCostoEstandar.SelectedIndexChanged += comboBoxCostoEstandar_SelectedIndexChanged;
             // 
             // button7
             // 
             button7.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button7.Image = (Image)resources.GetObject("button7.Image");
-            button7.Location = new Point(118, 410);
+            button7.Location = new Point(394, 418);
             button7.Margin = new Padding(3, 2, 3, 2);
             button7.Name = "button7";
             button7.Size = new Size(62, 49);
@@ -508,432 +934,14 @@
             // 
             button1.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Image = Properties.Resources.Right_64px;
-            button1.Location = new Point(186, 410);
+            button1.Location = new Point(462, 418);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(62, 49);
+            button1.Size = new Size(58, 49);
             button1.TabIndex = 24;
             button1.Text = "                \r\n                 ";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click_2;
-            // 
-            // label25
-            // 
-            label25.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label25.ForeColor = Color.Black;
-            label25.Location = new Point(186, 461);
-            label25.Name = "label25";
-            label25.Size = new Size(72, 26);
-            label25.TabIndex = 23;
-            label25.Text = "Siguiente";
-            label25.Click += label25_Click;
-            // 
-            // label15
-            // 
-            label15.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label15.ForeColor = Color.Black;
-            label15.Location = new Point(42, 2);
-            label15.Name = "label15";
-            label15.Size = new Size(302, 29);
-            label15.TabIndex = 16;
-            label15.Text = "Selecciona las columnas del Excel que deseas enviar a la base de datos. Marca las que contienen la información que quieres importar y luego confirma";
-            label15.Click += label15_Click;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.White;
-            panel4.BorderStyle = BorderStyle.Fixed3D;
-            panel4.Controls.Add(comboBoxNivel5);
-            panel4.Controls.Add(comboBoxNivel4);
-            panel4.Controls.Add(comboBoxNivel3);
-            panel4.Controls.Add(comboBoxNivel2);
-            panel4.Controls.Add(label23);
-            panel4.Controls.Add(label34);
-            panel4.Controls.Add(label1);
-            panel4.Controls.Add(label33);
-            panel4.Controls.Add(label32);
-            panel4.Controls.Add(comboBoxCostoEstandar);
-            panel4.Controls.Add(label29);
-            panel4.Controls.Add(comboBoxPrecio);
-            panel4.Controls.Add(label18);
-            panel4.Controls.Add(panel1);
-            panel4.Controls.Add(label19);
-            panel4.Controls.Add(dataGridView2);
-            panel4.Location = new Point(11, 46);
-            panel4.Margin = new Padding(3, 2, 3, 2);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(374, 360);
-            panel4.TabIndex = 18;
-            panel4.Paint += panel4_Paint;
-            // 
-            // comboBoxNivel5
-            // 
-            comboBoxNivel5.FormattingEnabled = true;
-            comboBoxNivel5.Location = new Point(169, 331);
-            comboBoxNivel5.Margin = new Padding(3, 2, 3, 2);
-            comboBoxNivel5.Name = "comboBoxNivel5";
-            comboBoxNivel5.Size = new Size(203, 25);
-            comboBoxNivel5.TabIndex = 60;
-            // 
-            // comboBoxNivel4
-            // 
-            comboBoxNivel4.FormattingEnabled = true;
-            comboBoxNivel4.Location = new Point(169, 309);
-            comboBoxNivel4.Margin = new Padding(3, 2, 3, 2);
-            comboBoxNivel4.Name = "comboBoxNivel4";
-            comboBoxNivel4.Size = new Size(203, 25);
-            comboBoxNivel4.TabIndex = 59;
-            // 
-            // comboBoxNivel3
-            // 
-            comboBoxNivel3.FormattingEnabled = true;
-            comboBoxNivel3.Location = new Point(169, 284);
-            comboBoxNivel3.Margin = new Padding(3, 2, 3, 2);
-            comboBoxNivel3.Name = "comboBoxNivel3";
-            comboBoxNivel3.Size = new Size(203, 25);
-            comboBoxNivel3.TabIndex = 58;
-            // 
-            // comboBoxNivel2
-            // 
-            comboBoxNivel2.FormattingEnabled = true;
-            comboBoxNivel2.Location = new Point(169, 259);
-            comboBoxNivel2.Margin = new Padding(3, 2, 3, 2);
-            comboBoxNivel2.Name = "comboBoxNivel2";
-            comboBoxNivel2.Size = new Size(203, 25);
-            comboBoxNivel2.TabIndex = 57;
-            // 
-            // label23
-            // 
-            label23.BackColor = Color.White;
-            label23.BorderStyle = BorderStyle.FixedSingle;
-            label23.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label23.ForeColor = Color.Black;
-            label23.Location = new Point(-3, 334);
-            label23.Name = "label23";
-            label23.Size = new Size(175, 22);
-            label23.TabIndex = 56;
-            label23.Text = "Nivel 5";
-            // 
-            // label34
-            // 
-            label34.BackColor = Color.White;
-            label34.BorderStyle = BorderStyle.FixedSingle;
-            label34.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label34.ForeColor = Color.Black;
-            label34.Location = new Point(-2, 309);
-            label34.Name = "label34";
-            label34.Size = new Size(174, 25);
-            label34.TabIndex = 55;
-            label34.Text = "Nivel 4";
-            // 
-            // label1
-            // 
-            label1.BackColor = Color.Gainsboro;
-            label1.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(-2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(174, 40);
-            label1.TabIndex = 21;
-            label1.Text = "            Campos\r\n";
-            label1.Click += label1_Click_1;
-            // 
-            // label33
-            // 
-            label33.BackColor = Color.White;
-            label33.BorderStyle = BorderStyle.FixedSingle;
-            label33.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label33.ForeColor = Color.Black;
-            label33.Location = new Point(-2, 284);
-            label33.Name = "label33";
-            label33.Size = new Size(174, 25);
-            label33.TabIndex = 54;
-            label33.Text = "Nivel 3";
-            // 
-            // label32
-            // 
-            label32.BackColor = Color.White;
-            label32.BorderStyle = BorderStyle.FixedSingle;
-            label32.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label32.ForeColor = Color.Black;
-            label32.Location = new Point(-2, 259);
-            label32.Name = "label32";
-            label32.Size = new Size(174, 25);
-            label32.TabIndex = 53;
-            label32.Text = "Nivel 2";
-            // 
-            // comboBoxCostoEstandar
-            // 
-            comboBoxCostoEstandar.FormattingEnabled = true;
-            comboBoxCostoEstandar.Location = new Point(169, 234);
-            comboBoxCostoEstandar.Margin = new Padding(3, 2, 3, 2);
-            comboBoxCostoEstandar.Name = "comboBoxCostoEstandar";
-            comboBoxCostoEstandar.Size = new Size(203, 25);
-            comboBoxCostoEstandar.TabIndex = 50;
-            comboBoxCostoEstandar.SelectedIndexChanged += comboBoxCostoEstandar_SelectedIndexChanged;
-            // 
-            // label29
-            // 
-            label29.BackColor = Color.White;
-            label29.BorderStyle = BorderStyle.FixedSingle;
-            label29.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label29.ForeColor = Color.Black;
-            label29.Location = new Point(-1, 234);
-            label29.Name = "label29";
-            label29.Size = new Size(173, 25);
-            label29.TabIndex = 47;
-            label29.Text = "Costo Est.$";
-            // 
-            // comboBoxPrecio
-            // 
-            comboBoxPrecio.FormattingEnabled = true;
-            comboBoxPrecio.Location = new Point(169, 209);
-            comboBoxPrecio.Margin = new Padding(3, 2, 3, 2);
-            comboBoxPrecio.Name = "comboBoxPrecio";
-            comboBoxPrecio.Size = new Size(203, 25);
-            comboBoxPrecio.TabIndex = 46;
-            comboBoxPrecio.SelectedIndexChanged += comboBoxPrecio_SelectedIndexChanged;
-            // 
-            // label18
-            // 
-            label18.BackColor = Color.White;
-            label18.BorderStyle = BorderStyle.FixedSingle;
-            label18.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label18.ForeColor = Color.Black;
-            label18.Location = new Point(-2, 209);
-            label18.Name = "label18";
-            label18.Size = new Size(174, 25);
-            label18.TabIndex = 45;
-            label18.Text = "Precio estandar";
-            // 
-            // panel1
-            // 
-            panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Controls.Add(label21);
-            panel1.Controls.Add(label20);
-            panel1.Controls.Add(label17);
-            panel1.Controls.Add(label14);
-            panel1.Controls.Add(label13);
-            panel1.Controls.Add(label22);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(comboBoxUPC);
-            panel1.Controls.Add(comboBox10);
-            panel1.Controls.Add(comboBoxAtrib);
-            panel1.Controls.Add(comboBoxTalla);
-            panel1.Controls.Add(comboBoxDetalle_item);
-            panel1.Controls.Add(comboBox4);
-            panel1.Controls.Add(comboBox6);
-            panel1.Controls.Add(comboBoxCab);
-            panel1.Location = new Point(-2, 38);
-            panel1.Margin = new Padding(3, 2, 3, 2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(379, 176);
-            panel1.TabIndex = 39;
-            // 
-            // label21
-            // 
-            label21.BackColor = Color.White;
-            label21.BorderStyle = BorderStyle.FixedSingle;
-            label21.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label21.ForeColor = Color.Black;
-            label21.Location = new Point(-2, 124);
-            label21.Name = "label21";
-            label21.Size = new Size(169, 24);
-            label21.TabIndex = 40;
-            label21.Text = "Cod. Cab";
-            // 
-            // label20
-            // 
-            label20.BackColor = Color.White;
-            label20.BorderStyle = BorderStyle.FixedSingle;
-            label20.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label20.ForeColor = Color.Black;
-            label20.Location = new Point(-2, 104);
-            label20.Name = "label20";
-            label20.Size = new Size(169, 20);
-            label20.TabIndex = 40;
-            label20.Text = "Cod. Barra (UPC) ";
-            // 
-            // label17
-            // 
-            label17.BackColor = Color.White;
-            label17.BorderStyle = BorderStyle.FixedSingle;
-            label17.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label17.ForeColor = Color.Black;
-            label17.Location = new Point(-2, 84);
-            label17.Name = "label17";
-            label17.Size = new Size(169, 20);
-            label17.TabIndex = 40;
-            label17.Text = "Talla";
-            // 
-            // label14
-            // 
-            label14.BackColor = Color.White;
-            label14.BorderStyle = BorderStyle.FixedSingle;
-            label14.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label14.ForeColor = Color.Black;
-            label14.Location = new Point(-1, 64);
-            label14.Name = "label14";
-            label14.Size = new Size(168, 20);
-            label14.TabIndex = 25;
-            label14.Text = "Color/Atrip";
-            // 
-            // label13
-            // 
-            label13.BackColor = Color.White;
-            label13.BorderStyle = BorderStyle.FixedSingle;
-            label13.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.ForeColor = Color.Black;
-            label13.Location = new Point(-1, 44);
-            label13.Name = "label13";
-            label13.Size = new Size(168, 20);
-            label13.TabIndex = 24;
-            label13.Text = "Nombre corto";
-            // 
-            // label22
-            // 
-            label22.BackColor = Color.White;
-            label22.BorderStyle = BorderStyle.FixedSingle;
-            label22.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label22.ForeColor = Color.Black;
-            label22.Location = new Point(-2, 148);
-            label22.Name = "label22";
-            label22.Size = new Size(169, 21);
-            label22.TabIndex = 41;
-            label22.Text = "Descripcion extensa";
-            // 
-            // label4
-            // 
-            label4.BackColor = Color.White;
-            label4.BorderStyle = BorderStyle.FixedSingle;
-            label4.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(-2, 24);
-            label4.Name = "label4";
-            label4.Size = new Size(169, 20);
-            label4.TabIndex = 23;
-            label4.Text = "Departamento*";
-            // 
-            // label3
-            // 
-            label3.BackColor = Color.White;
-            label3.BorderStyle = BorderStyle.FixedSingle;
-            label3.Font = new Font("Tahoma", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(-1, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(168, 23);
-            label3.TabIndex = 22;
-            label3.Text = "Proveedor*";
-            // 
-            // comboBoxUPC
-            // 
-            comboBoxUPC.BackColor = Color.White;
-            comboBoxUPC.FormattingEnabled = true;
-            comboBoxUPC.Location = new Point(164, 19);
-            comboBoxUPC.Margin = new Padding(3, 2, 3, 2);
-            comboBoxUPC.Name = "comboBoxUPC";
-            comboBoxUPC.Size = new Size(208, 25);
-            comboBoxUPC.TabIndex = 0;
-            comboBoxUPC.SelectedIndexChanged += comboBoxUPC_SelectedIndexChanged;
-            // 
-            // comboBox10
-            // 
-            comboBox10.BackColor = Color.White;
-            comboBox10.FormattingEnabled = true;
-            comboBox10.Location = new Point(164, -2);
-            comboBox10.Margin = new Padding(3, 2, 3, 2);
-            comboBox10.Name = "comboBox10";
-            comboBox10.Size = new Size(208, 25);
-            comboBox10.TabIndex = 37;
-            comboBox10.SelectedIndexChanged += comboBox10_SelectedIndexChanged;
-            // 
-            // comboBoxAtrib
-            // 
-            comboBoxAtrib.FormattingEnabled = true;
-            comboBoxAtrib.Location = new Point(164, 44);
-            comboBoxAtrib.Margin = new Padding(3, 2, 3, 2);
-            comboBoxAtrib.Name = "comboBoxAtrib";
-            comboBoxAtrib.Size = new Size(208, 25);
-            comboBoxAtrib.TabIndex = 20;
-            comboBoxAtrib.SelectedIndexChanged += comboBoxAtrib_SelectedIndexChanged;
-            // 
-            // comboBoxTalla
-            // 
-            comboBoxTalla.FormattingEnabled = true;
-            comboBoxTalla.Location = new Point(164, 64);
-            comboBoxTalla.Margin = new Padding(3, 2, 3, 2);
-            comboBoxTalla.Name = "comboBoxTalla";
-            comboBoxTalla.Size = new Size(208, 25);
-            comboBoxTalla.TabIndex = 23;
-            comboBoxTalla.SelectedIndexChanged += comboBoxTalla_SelectedIndexChanged;
-            // 
-            // comboBoxDetalle_item
-            // 
-            comboBoxDetalle_item.FormattingEnabled = true;
-            comboBoxDetalle_item.Location = new Point(164, 149);
-            comboBoxDetalle_item.Margin = new Padding(3, 2, 3, 2);
-            comboBoxDetalle_item.Name = "comboBoxDetalle_item";
-            comboBoxDetalle_item.Size = new Size(208, 25);
-            comboBoxDetalle_item.TabIndex = 42;
-            comboBoxDetalle_item.SelectedIndexChanged += comboBoxDetalle_item_SelectedIndexChanged;
-            // 
-            // comboBox4
-            // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(164, 84);
-            comboBox4.Margin = new Padding(3, 2, 3, 2);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(208, 25);
-            comboBox4.TabIndex = 25;
-            comboBox4.SelectedIndexChanged += comboBox4_SelectedIndexChanged;
-            // 
-            // comboBox6
-            // 
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Location = new Point(164, 104);
-            comboBox6.Margin = new Padding(3, 2, 3, 2);
-            comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(208, 25);
-            comboBox6.TabIndex = 32;
-            comboBox6.SelectedIndexChanged += comboBox6_SelectedIndexChanged;
-            // 
-            // comboBoxCab
-            // 
-            comboBoxCab.FormattingEnabled = true;
-            comboBoxCab.Location = new Point(164, 124);
-            comboBoxCab.Margin = new Padding(3, 2, 3, 2);
-            comboBoxCab.Name = "comboBoxCab";
-            comboBoxCab.Size = new Size(208, 25);
-            comboBoxCab.TabIndex = 27;
-            comboBoxCab.SelectedIndexChanged += comboBox5_SelectedIndexChanged;
-            // 
-            // label19
-            // 
-            label19.BackColor = Color.Gainsboro;
-            label19.BorderStyle = BorderStyle.Fixed3D;
-            label19.Font = new Font("Tahoma", 8F, FontStyle.Bold);
-            label19.ForeColor = Color.Black;
-            label19.Location = new Point(169, -2);
-            label19.Name = "label19";
-            label19.Size = new Size(203, 42);
-            label19.TabIndex = 19;
-            label19.Text = "     Seleccionar campos del excel";
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView2.BorderStyle = BorderStyle.Fixed3D;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(3, 38);
-            dataGridView2.Margin = new Padding(3, 2, 3, 2);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.ReadOnly = true;
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(307, 176);
-            dataGridView2.TabIndex = 38;
-            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
             // tabPage3
             // 
@@ -949,7 +957,7 @@
             tabPage3.Margin = new Padding(3, 2, 3, 2);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3, 2, 3, 2);
-            tabPage3.Size = new Size(404, 455);
+            tabPage3.Size = new Size(544, 466);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Enviar posteo ";
             tabPage3.Click += tabPage3_Click;
@@ -958,7 +966,7 @@
             // 
             label28.Font = new Font("Tahoma", 8.8F);
             label28.ForeColor = Color.Black;
-            label28.Location = new Point(200, 458);
+            label28.Location = new Point(476, 462);
             label28.Name = "label28";
             label28.Size = new Size(53, 26);
             label28.TabIndex = 36;
@@ -968,7 +976,7 @@
             // 
             label27.Font = new Font("Tahoma", 8.8F);
             label27.ForeColor = Color.Black;
-            label27.Location = new Point(134, 456);
+            label27.Location = new Point(410, 462);
             label27.Name = "label27";
             label27.Size = new Size(51, 26);
             label27.TabIndex = 35;
@@ -978,10 +986,10 @@
             // 
             button2.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(123, 405);
+            button2.Location = new Point(399, 407);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(62, 49);
+            button2.Size = new Size(62, 53);
             button2.TabIndex = 34;
             button2.Text = "                \r\n                 ";
             button2.UseVisualStyleBackColor = true;
@@ -998,7 +1006,7 @@
             tabPage4.Margin = new Padding(3, 2, 3, 2);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3, 2, 3, 2);
-            tabPage4.Size = new Size(404, 455);
+            tabPage4.Size = new Size(544, 466);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Historial de Actividades";
             tabPage4.Click += tabPage4_Click;
@@ -1007,9 +1015,9 @@
             // 
             label35.Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label35.ForeColor = Color.Black;
-            label35.Location = new Point(167, 462);
+            label35.Location = new Point(482, 462);
             label35.Name = "label35";
-            label35.Size = new Size(42, 26);
+            label35.Size = new Size(42, 22);
             label35.TabIndex = 36;
             label35.Text = "Atrás";
             // 
@@ -1027,7 +1035,7 @@
             // 
             button3.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(156, 409);
+            button3.Location = new Point(471, 409);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(62, 51);
@@ -1038,10 +1046,10 @@
             // 
             // richTextBoxLogs
             // 
-            richTextBoxLogs.Location = new Point(7, 10);
+            richTextBoxLogs.Location = new Point(3, 0);
             richTextBoxLogs.Margin = new Padding(3, 2, 3, 2);
             richTextBoxLogs.Name = "richTextBoxLogs";
-            richTextBoxLogs.Size = new Size(391, 395);
+            richTextBoxLogs.Size = new Size(533, 405);
             richTextBoxLogs.TabIndex = 0;
             richTextBoxLogs.Text = "";
             richTextBoxLogs.TextChanged += richTextBoxLogs_TextChanged;
@@ -1079,7 +1087,7 @@
             label2.ForeColor = Color.Black;
             label2.Location = new Point(98, 35);
             label2.Name = "label2";
-            label2.Size = new Size(352, 56);
+            label2.Size = new Size(452, 45);
             label2.TabIndex = 27;
             label2.Text = resources.GetString("label2.Text");
             label2.Click += label2_Click_1;
@@ -1091,11 +1099,12 @@
             AutoScroll = true;
             AutoSize = true;
             BackColor = Color.White;
-            ClientSize = new Size(452, 611);
+            ClientSize = new Size(582, 610);
             Controls.Add(label2);
             Controls.Add(label12);
             Controls.Add(pictureBox2);
             Controls.Add(tabControl1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "MainCode";
@@ -1112,7 +1121,6 @@
             tabPage2.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             tabPage3.ResumeLayout(false);
             tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -1145,7 +1153,6 @@
         private TabPage tabPage1;
         private TabPage tabPage2;
         private TabPage tabPage3;
-        private Label label6;
         private Label label11;
         private PictureBox pictureBox2;
         private Label label12;
@@ -1159,21 +1166,11 @@
         private ComboBox comboBox4;
         private ComboBox comboBox6;
         private ComboBox comboBox10;
-        private DataGridView dataGridView2;
         private ComboBox comboBoxTalla;
-        private Label label19;
         private Button button5;
-        private Panel panel1;
         private Label label1;
-        private Label label21;
-        private Label label20;
-        private Label label17;
-        private Label label14;
-        private Label label13;
-        private Label label4;
         private Label label3;
         private ComboBox comboBoxDetalle_item;
-        private Label label22;
         private TabPage tabPage4;
         private RichTextBox richTextBoxLogs;
         private Label label24;
@@ -1186,20 +1183,32 @@
         private Label label28;
         private Label label2;
         private ComboBox comboBoxPrecio;
-        private Label label18;
-        private Label label29;
         private ComboBox comboBoxCostoEstandar;
-        private Label label34;
-        private Label label33;
-        private Label label32;
         private ComboBox comboBoxNivel5;
         private ComboBox comboBoxNivel4;
         private ComboBox comboBoxNivel3;
         private ComboBox comboBoxNivel2;
-        private Label label23;
         private Label label30;
         private Label label31;
         private Button button3;
         private Label label35;
+        private Panel panel1;
+        private Label label19;
+        private Label label36;
+        private Label label41;
+        private Label label40;
+        private Label label39;
+        private Label label38;
+        private Label label37;
+        private Label label45;
+        private Label label43;
+        private Label label42;
+        private Label label48;
+        private Label label47;
+        private Label label46;
+        private Label label4;
+        private Label labelFileName;
+        private Label label6;
+        private Label label13;
     }
 }

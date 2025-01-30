@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WBy5M7EJNo8=",
+  "dgSpecHash": "Uo6coN/wNY8=",
   "success": true,
   "projectFilePath": "C:\\Users\\acost\\Downloads\\JamenSoft\\InventarioExcel\\InventarioExcel.csproj",
   "expectedPackageFiles": [
@@ -12,9 +12,12 @@
     "C:\\Users\\acost\\.nuget\\packages\\documentformat.openxml\\3.1.1\\documentformat.openxml.3.1.1.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\documentformat.openxml.framework\\3.1.1\\documentformat.openxml.framework.3.1.1.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\enums.net\\4.0.1\\enums.net.4.0.1.nupkg.sha512",
+    "C:\\Users\\acost\\.nuget\\packages\\exceldatareader\\3.7.0\\exceldatareader.3.7.0.nupkg.sha512",
+    "C:\\Users\\acost\\.nuget\\packages\\exceldatareader.dataset\\3.7.0\\exceldatareader.dataset.3.7.0.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\excelnumberformat\\1.1.0\\excelnumberformat.1.1.0.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\extendednumerics.bigdecimal\\2025.1001.2.129\\extendednumerics.bigdecimal.2025.1001.2.129.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\firebirdsql.data.firebirdclient\\10.3.1\\firebirdsql.data.firebirdclient.10.3.1.nupkg.sha512",
+    "C:\\Users\\acost\\.nuget\\packages\\ini-parser\\2.5.2\\ini-parser.2.5.2.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\mathnet.numerics.signed\\5.0.0\\mathnet.numerics.signed.5.0.0.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
@@ -40,6 +43,7 @@
     "C:\\Users\\acost\\.nuget\\packages\\sixlabors.imagesharp\\2.1.9\\sixlabors.imagesharp.2.1.9.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\system.configuration.configurationmanager\\8.0.0\\system.configuration.configurationmanager.8.0.0.nupkg.sha512",
+    "C:\\Users\\acost\\.nuget\\packages\\system.data.odbc\\9.0.1\\system.data.odbc.9.0.1.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\system.diagnostics.eventlog\\8.0.0\\system.diagnostics.eventlog.8.0.0.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.35.0\\system.identitymodel.tokens.jwt.6.35.0.nupkg.sha512",
@@ -60,5 +64,16 @@
     "C:\\Users\\acost\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"ini-parser 2.5.2\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net8.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "ini-parser",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    }
+  ]
 }

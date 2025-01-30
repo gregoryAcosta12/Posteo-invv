@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QvYCE7l/QWM=",
+  "dgSpecHash": "Yzntsek0uy0=",
   "success": true,
   "projectFilePath": "C:\\Users\\acost\\Downloads\\JamenSoft\\InventarioExcel\\InventarioExcel.csproj",
   "expectedPackageFiles": [
@@ -12,9 +12,12 @@
     "C:\\Users\\acost\\.nuget\\packages\\documentformat.openxml\\3.1.1\\documentformat.openxml.3.1.1.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\documentformat.openxml.framework\\3.1.1\\documentformat.openxml.framework.3.1.1.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\enums.net\\4.0.1\\enums.net.4.0.1.nupkg.sha512",
+    "C:\\Users\\acost\\.nuget\\packages\\exceldatareader\\3.7.0\\exceldatareader.3.7.0.nupkg.sha512",
+    "C:\\Users\\acost\\.nuget\\packages\\exceldatareader.dataset\\3.7.0\\exceldatareader.dataset.3.7.0.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\excelnumberformat\\1.1.0\\excelnumberformat.1.1.0.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\extendednumerics.bigdecimal\\2025.1001.2.129\\extendednumerics.bigdecimal.2025.1001.2.129.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\firebirdsql.data.firebirdclient\\10.3.1\\firebirdsql.data.firebirdclient.10.3.1.nupkg.sha512",
+    "C:\\Users\\acost\\.nuget\\packages\\ini-parser\\2.5.2\\ini-parser.2.5.2.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\mathnet.numerics.signed\\5.0.0\\mathnet.numerics.signed.5.0.0.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
@@ -29,7 +32,7 @@
     "C:\\Users\\acost\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.35.0\\microsoft.identitymodel.protocols.openidconnect.6.35.0.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.35.0\\microsoft.identitymodel.tokens.6.35.0.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\microsoft.io.recyclablememorystream\\3.0.0\\microsoft.io.recyclablememorystream.3.0.0.nupkg.sha512",
-    "C:\\Users\\acost\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.11\\microsoft.net.illink.tasks.8.0.11.nupkg.sha512",
+    "C:\\Users\\acost\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.12\\microsoft.net.illink.tasks.8.0.12.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\microsoft.office.interop.excel\\15.0.4795.1001\\microsoft.office.interop.excel.15.0.4795.1001.nupkg.sha512",
@@ -43,6 +46,7 @@
     "C:\\Users\\acost\\.nuget\\packages\\sixlabors.imagesharp\\2.1.9\\sixlabors.imagesharp.2.1.9.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\system.configuration.configurationmanager\\8.0.0\\system.configuration.configurationmanager.8.0.0.nupkg.sha512",
+    "C:\\Users\\acost\\.nuget\\packages\\system.data.odbc\\9.0.1\\system.data.odbc.9.0.1.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\system.diagnostics.eventlog\\8.0.0\\system.diagnostics.eventlog.8.0.0.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.35.0\\system.identitymodel.tokens.jwt.6.35.0.nupkg.sha512",
@@ -63,39 +67,19 @@
     "C:\\Users\\acost\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\acost\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\acost\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.11\\microsoft.netcore.app.runtime.win-x64.8.0.11.nupkg.sha512",
-    "C:\\Users\\acost\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.11\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.11.nupkg.sha512",
-    "C:\\Users\\acost\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.11\\microsoft.aspnetcore.app.runtime.win-x64.8.0.11.nupkg.sha512"
+    "C:\\Users\\acost\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.12\\microsoft.netcore.app.runtime.win-x64.8.0.12.nupkg.sha512",
+    "C:\\Users\\acost\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.12\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.12.nupkg.sha512",
+    "C:\\Users\\acost\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.12\\microsoft.aspnetcore.app.runtime.win-x64.8.0.12.nupkg.sha512"
   ],
   "logs": [
     {
-      "code": "NU1903",
+      "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "El paquete \"System.Private.Uri\" 4.3.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-5f2m-466j-3848",
-      "libraryId": "System.Private.Uri",
+      "message": "El paquete \"ini-parser 2.5.2\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net8.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "ini-parser",
       "targetGraphs": [
-        "net8.0-windows7.0/win-x64"
-      ]
-    },
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"System.Private.Uri\" 4.3.0 tiene una vulnerabilidad de gravedad moderada conocida, https://github.com/advisories/GHSA-x5qj-9vmx-7g6g",
-      "libraryId": "System.Private.Uri",
-      "targetGraphs": [
-        "net8.0-windows7.0/win-x64"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"System.Private.Uri\" 4.3.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-xhfc-gr8f-ffwc",
-      "libraryId": "System.Private.Uri",
-      "targetGraphs": [
-        "net8.0-windows7.0/win-x64"
+        "net8.0-windows7.0"
       ]
     }
   ]

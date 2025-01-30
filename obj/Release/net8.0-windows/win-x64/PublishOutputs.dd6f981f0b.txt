@@ -1,0 +1,8 @@
+C:\Users\acost\Downloads\Herramienta de importar(arreglo de rutas)\InventarioExcel.pdb
+C:\Users\acost\Downloads\Herramienta de importar(arreglo de rutas)\D3DCompiler_47_cor3.dll
+C:\Users\acost\Downloads\Herramienta de importar(arreglo de rutas)\PenImc_cor3.dll
+C:\Users\acost\Downloads\Herramienta de importar(arreglo de rutas)\PresentationNative_cor3.dll
+C:\Users\acost\Downloads\Herramienta de importar(arreglo de rutas)\vcruntime140_cor3.dll
+C:\Users\acost\Downloads\Herramienta de importar(arreglo de rutas)\wpfgfx_cor3.dll
+C:\Users\acost\Downloads\Herramienta de importar(arreglo de rutas)\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\acost\Downloads\Herramienta de importar(arreglo de rutas)\InventarioExcel.exe

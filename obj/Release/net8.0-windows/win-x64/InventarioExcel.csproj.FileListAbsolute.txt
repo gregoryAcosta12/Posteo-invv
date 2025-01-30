@@ -795,7 +795,6 @@ C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\wi
 C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\win-x64\hostfxr.dll
 C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\win-x64\hostpolicy.dll
 C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\win-x64\mscordaccore.dll
-C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\win-x64\mscordaccore_amd64_amd64_8.0.1124.51707.dll
 C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\win-x64\mscordbi.dll
 C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\win-x64\mscorrc.dll
 C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\win-x64\msquic.dll
@@ -1039,3 +1038,9 @@ C:\Users\acost\Downloads\JamenSoft\InventarioExcel\obj\Release\net8.0-windows\wi
 C:\Users\acost\Downloads\JamenSoft\InventarioExcel\obj\Release\net8.0-windows\win-x64\InventarioExcel.pdb
 C:\Users\acost\Downloads\JamenSoft\InventarioExcel\obj\Release\net8.0-windows\win-x64\InventarioExcel.genruntimeconfig.cache
 C:\Users\acost\Downloads\JamenSoft\InventarioExcel\obj\Release\net8.0-windows\win-x64\ref\InventarioExcel.dll
+C:\Users\acost\Downloads\JamenSoft\InventarioExcel\obj\Release\net8.0-windows\win-x64\InventarioExcel.sourcelink.json
+C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\win-x64\mscordaccore_amd64_amd64_8.0.1224.60305.dll
+C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\win-x64\INIFileParser.dll
+C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\win-x64\System.Data.Odbc.dll
+C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\win-x64\ExcelDataReader.dll
+C:\Users\acost\Downloads\JamenSoft\InventarioExcel\bin\Release\net8.0-windows\win-x64\ExcelDataReader.DataSet.dll

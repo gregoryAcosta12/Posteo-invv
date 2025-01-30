@@ -9,10 +9,14 @@
       "InventarioExcel/1.0.0": {
         "dependencies": {
           "ClosedXML": "0.104.2",
+          "ExcelDataReader": "3.7.0",
+          "ExcelDataReader.DataSet": "3.7.0",
           "FirebirdSql.Data.FirebirdClient": "10.3.1",
           "Microsoft.Data.SqlClient": "5.2.2",
           "Microsoft.Office.Interop.Excel": "15.0.4795.1001",
-          "NPOI": "2.7.2"
+          "NPOI": "2.7.2",
+          "System.Data.Odbc": "9.0.1",
+          "ini-parser": "2.5.2"
         },
         "runtime": {
           "InventarioExcel.dll": {}
@@ -114,6 +118,25 @@
           }
         }
       },
+      "ExcelDataReader/3.7.0": {
+        "runtime": {
+          "lib/netstandard2.1/ExcelDataReader.dll": {
+            "assemblyVersion": "3.7.0.0",
+            "fileVersion": "3.7.0.0"
+          }
+        }
+      },
+      "ExcelDataReader.DataSet/3.7.0": {
+        "dependencies": {
+          "ExcelDataReader": "3.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/ExcelDataReader.DataSet.dll": {
+            "assemblyVersion": "3.7.0.0",
+            "fileVersion": "3.7.0.0"
+          }
+        }
+      },
       "ExcelNumberFormat/1.1.0": {
         "runtime": {
           "lib/netstandard2.0/ExcelNumberFormat.dll": {
@@ -135,6 +158,14 @@
           "lib/net8.0/FirebirdSql.Data.FirebirdClient.dll": {
             "assemblyVersion": "10.3.1.0",
             "fileVersion": "10.3.1.0"
+          }
+        }
+      },
+      "ini-parser/2.5.2": {
+        "runtime": {
+          "lib/net20/INIFileParser.dll": {
+            "assemblyVersion": "2.5.2.0",
+            "fileVersion": "2.5.2.0"
           }
         }
       },
@@ -449,6 +480,28 @@
           "System.Security.Cryptography.ProtectedData": "8.0.0"
         }
       },
+      "System.Data.Odbc/9.0.1": {
+        "runtime": {
+          "lib/net8.0/System.Data.Odbc.dll": {
+            "assemblyVersion": "9.0.0.1",
+            "fileVersion": "9.0.124.61010"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/net8.0/System.Data.Odbc.dll": {
+            "rid": "unix",
+            "assetType": "runtime",
+            "assemblyVersion": "9.0.0.1",
+            "fileVersion": "9.0.124.61010"
+          },
+          "runtimes/win/lib/net8.0/System.Data.Odbc.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "9.0.0.1",
+            "fileVersion": "9.0.124.61010"
+          }
+        }
+      },
       "System.Diagnostics.DiagnosticSource/6.0.1": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
@@ -623,6 +676,20 @@
       "path": "enums.net/4.0.1",
       "hashPath": "enums.net.4.0.1.nupkg.sha512"
     },
+    "ExcelDataReader/3.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AMv3oDETRHSRyXC17rBtKH45qIfFyo433LMeaMB3u4RNr/c9Luuc0Z+JMP6+3Cx9n4wXqFqcrEIVxrf/GgYnZg==",
+      "path": "exceldatareader/3.7.0",
+      "hashPath": "exceldatareader.3.7.0.nupkg.sha512"
+    },
+    "ExcelDataReader.DataSet/3.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zA2/CVzbMspkNg0qf0/Zp+eU6VxYP5PtiJSErLDP46d/Y7F6of/NCcSGeXjs97KDq7UiEf6XJe+89s/92n2GYg==",
+      "path": "exceldatareader.dataset/3.7.0",
+      "hashPath": "exceldatareader.dataset.3.7.0.nupkg.sha512"
+    },
     "ExcelNumberFormat/1.1.0": {
       "type": "package",
       "serviceable": true,
@@ -643,6 +710,13 @@
       "sha512": "sha512-LDKlTIH3Tivi8sMkwrolVcIZWJDTwxBCugE+eEZRY6pFnK75gmJnV0u4FkC73M6ERbCKUvY7m5ox8VkicJZubg==",
       "path": "firebirdsql.data.firebirdclient/10.3.1",
       "hashPath": "firebirdsql.data.firebirdclient.10.3.1.nupkg.sha512"
+    },
+    "ini-parser/2.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hp3gKmC/14+6eKLgv7Jd1Z7OV86lO+tNfOXr/stQbwmRhdQuXVSvrRAuAe7G5+lwhkov0XkqZ8/bn1PYWMx6eg==",
+      "path": "ini-parser/2.5.2",
+      "hashPath": "ini-parser.2.5.2.nupkg.sha512"
     },
     "MathNet.Numerics.Signed/5.0.0": {
       "type": "package",
@@ -818,6 +892,13 @@
       "sha512": "sha512-JlYi9XVvIREURRUlGMr1F6vOFLk7YSY4p1vHo4kX3tQ0AGrjqlRWHDi66ImHhy6qwXBG3BJ6Y1QlYQ+Qz6Xgww==",
       "path": "system.configuration.configurationmanager/8.0.0",
       "hashPath": "system.configuration.configurationmanager.8.0.0.nupkg.sha512"
+    },
+    "System.Data.Odbc/9.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-J6pspjthfveu+Zg75tfRpsH3PggtpMiuirXtem2n7sJ2FDR+V0pQC6AZVJR5w7etnux2pqbwxGLVQjF/wdZdzQ==",
+      "path": "system.data.odbc/9.0.1",
+      "hashPath": "system.data.odbc.9.0.1.nupkg.sha512"
     },
     "System.Diagnostics.DiagnosticSource/6.0.1": {
       "type": "package",

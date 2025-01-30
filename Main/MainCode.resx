@@ -130,6 +130,11 @@
         RK5CYII=
 </value>
   </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Nota: El programa no permitirá postear dos veces el mismo archivo para evitar duplicados. Si deseas postear el mismo archivo de todas formas, edita su nombre para que sea diferente, y así podrás postearlo nuevamente.
+
+</value>
+  </data>
   <data name="button7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAP1JREFUeF7t
