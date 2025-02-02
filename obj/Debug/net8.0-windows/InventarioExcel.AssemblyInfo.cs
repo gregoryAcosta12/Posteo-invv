@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InventarioExcel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+844b1311a10584e0e83c8c8b08390af81488eb44")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c627e43bd403eaa17fe7e9adabf830f27415114b")]
 [assembly: System.Reflection.AssemblyProductAttribute("InventarioExcel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InventarioExcel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
